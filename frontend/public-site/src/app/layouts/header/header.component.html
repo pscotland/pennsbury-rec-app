@@ -1,6 +1,84 @@
-<header>
-  <nav>
-    <h1>Recreation Council</h1>
-    <p>TODO: Add navigation and responsive menu.</p>
-  </nav>
+<header class="sticky top-0 z-50 border-b border-[var(--color-border)] bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:font-semibold"
+  >
+    Skip to main content
+  </a>
+
+  <div class="mx-auto flex h-16 w-full max-w-[var(--container-width)] items-center px-4 sm:px-6 lg:px-8">
+    <a
+      [routerLink]="['/']"
+      class="flex items-center gap-3 rounded-md text-[var(--color-text-primary)] no-underline"
+      aria-label="Parks and Recreation Council home"
+    >
+      <span
+        class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-[0_6px_20px_rgba(37,99,235,0.28)]"
+        aria-hidden="true"
+      >
+        <i class="pi pi-users text-sm"></i>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-sm font-extrabold tracking-tight">Council Logo</span>
+        <span class="block text-[0.625rem] uppercase tracking-[0.18em] text-[var(--color-text-secondary)]">
+          Recreation Council
+        </span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary" class="mx-auto hidden md:block">
+      <ul class="m-0 flex list-none items-center gap-1 p-0">
+        @for (item of primaryNav; track item.label) {
+          <li>
+            <a
+              [routerLink]="item.commands"
+              routerLinkActive="bg-blue-50 text-blue-700"
+              [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-text-secondary)] no-underline transition-colors hover:bg-slate-100 hover:text-[var(--color-text-primary)]"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="hidden items-center gap-4 md:flex">
+      <a
+        [routerLink]="adminLoginCommands"
+        class="rounded-md px-1 py-1 text-sm font-medium text-[var(--color-text-secondary)] no-underline transition-colors hover:text-blue-700"
+      >
+        Admin Login
+      </a>
+
+      <button
+        pButton
+        type="button"
+        label="Register"
+        [routerLink]="registerCommands"
+        class="p-button-sm"
+      ></button>
+    </div>
+
+    <button
+      type="button"
+      class="ml-auto inline-flex items-center justify-center rounded-md border border-[var(--color-border)] p-2 text-[var(--color-text-primary)] transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 md:hidden"
+      aria-label="Open mobile navigation"
+      [attr.aria-expanded]="mobileNavOpen()"
+      aria-controls="public-mobile-nav-drawer"
+      (click)="toggleMobileNav()"
+    >
+      <i class="pi text-base" [class.pi-bars]="!mobileNavOpen()" [class.pi-times]="mobileNavOpen()" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="md:hidden">
+    <app-mobile-nav
+      [open]="mobileNavOpen()"
+      [links]="primaryNav"
+      [registerCommands]="registerCommands"
+      [adminLoginCommands]="adminLoginCommands"
+      (openChange)="updateMobileNavState($event)"
+    ></app-mobile-nav>
+  </div>
 </header>

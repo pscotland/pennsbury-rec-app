@@ -1,3 +1,48 @@
-<nav>
-  <p>TODO: Add mobile navigation actions.</p>
-</nav>
+<p-drawer
+  id="public-mobile-nav-drawer"
+  position="right"
+  [visible]="open()"
+  [dismissible]="true"
+  [modal]="true"
+  [blockScroll]="true"
+  (visibleChange)="onDrawerVisibleChange($event)"
+  header="Navigation"
+  styleClass="w-full max-w-80"
+>
+  <nav aria-label="Mobile primary navigation" class="pt-2">
+    <ul class="m-0 list-none p-0">
+      @for (item of links(); track item.label) {
+        <li>
+          <a
+            [routerLink]="item.commands"
+            routerLinkActive="bg-blue-50 text-blue-700"
+            [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+            class="block rounded-lg px-3 py-3 text-base font-medium text-[var(--color-text-primary)] no-underline transition-colors hover:bg-slate-100"
+            (click)="closeDrawer()"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="mt-6 flex flex-col gap-3">
+      <button
+        pButton
+        type="button"
+        label="Register"
+        class="w-full"
+        [routerLink]="registerCommands()"
+        (click)="closeDrawer()"
+      ></button>
+
+      <a
+        [routerLink]="adminLoginCommands()"
+        class="inline-flex items-center justify-center rounded-lg border border-[var(--color-border)] px-4 py-2.5 text-sm font-semibold text-[var(--color-text-primary)] no-underline transition-colors hover:bg-slate-50"
+        (click)="closeDrawer()"
+      >
+        Admin Login
+      </a>
+    </div>
+  </nav>
+</p-drawer>
