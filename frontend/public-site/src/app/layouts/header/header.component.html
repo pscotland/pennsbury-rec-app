@@ -20,24 +20,23 @@
       </span>
     </a>
 
-    <nav aria-label="Primary" class="primary-nav hidden md:block">
-      <ul class="primary-nav__list">
-        @for (item of primaryNav; track item.label) {
-          <li>
-            <a
-              [routerLink]="item.commands"
-              routerLinkActive="primary-nav__link--active"
-              [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-              class="primary-nav__link"
-            >
-              {{ item.label }}
-            </a>
-          </li>
-        }
-      </ul>
+    <nav aria-label="Primary navigation" class="primary-nav">
+      <p-menubar [model]="desktopMenuItems" styleClass="primary-menubar">
+        <ng-template #item let-item>
+          <a
+            pRipple
+            [routerLink]="item.routerLink"
+            routerLinkActive="primary-nav__link--active"
+            [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+            class="primary-nav__link"
+          >
+            <span>{{ item.label }}</span>
+          </a>
+        </ng-template>
+      </p-menubar>
     </nav>
 
-    <div class="desktop-actions hidden items-center gap-4 md:flex">
+    <div class="desktop-actions">
       <a [routerLink]="adminLoginCommands" class="admin-link">
         Admin Login
       </a>
@@ -45,25 +44,32 @@
       <p-button label="Register" [routerLink]="registerCommands" size="small" styleClass="register-button"></p-button>
     </div>
 
-    <button
-      type="button"
-      class="mobile-menu-toggle ml-auto md:hidden"
-      aria-label="Open mobile navigation"
-      [attr.aria-expanded]="mobileNavOpen()"
-      aria-controls="public-mobile-nav-drawer"
-      (click)="toggleMobileNav()"
-    >
-      <i class="pi text-base" [class.pi-bars]="!mobileNavOpen()" [class.pi-times]="mobileNavOpen()" aria-hidden="true"></i>
-    </button>
-  </div>
+    <div class="mobile-nav">
+      <p-menu #mobileMenu [model]="menuItems" [popup]="true" styleClass="mobile-menu-popup">
+        <ng-template #item let-item>
+          <a
+            pRipple
+            [routerLink]="item.routerLink"
+            routerLinkActive="mobile-menu__link--active"
+            [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+            class="mobile-menu__link"
+            (click)="mobileMenu.hide()"
+          >
+            @if (item.icon) {
+              <i [class]="item.icon" aria-hidden="true"></i>
+            }
+            <span>{{ item.label }}</span>
+          </a>
+        </ng-template>
+      </p-menu>
 
-  <div class="md:hidden">
-    <app-mobile-nav
-      [open]="mobileNavOpen()"
-      [links]="primaryNav"
-      [registerCommands]="registerCommands"
-      [adminLoginCommands]="adminLoginCommands"
-      (openChange)="updateMobileNavState($event)"
-    ></app-mobile-nav>
+      <p-button
+        icon="pi pi-bars"
+        [text]="true"
+        styleClass="menu-button"
+        ariaLabel="Open navigation menu"
+        (onClick)="mobileMenu.toggle($event)"
+      ></p-button>
+    </div>
   </div>
 </header>

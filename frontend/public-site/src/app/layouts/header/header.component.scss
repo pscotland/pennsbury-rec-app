@@ -88,7 +88,32 @@
 }
 
 .primary-nav {
+	display: none;
 	margin-inline: auto;
+}
+
+.desktop-actions {
+	display: none;
+	align-items: center;
+	gap: 1rem;
+}
+
+.mobile-nav {
+	margin-left: auto;
+}
+
+@media (min-width: 768px) {
+	.primary-nav {
+		display: block;
+	}
+
+	.desktop-actions {
+		display: flex;
+	}
+
+	.mobile-nav {
+		display: none;
+	}
 }
 
 .primary-nav__list {
@@ -135,27 +160,50 @@
 	color: var(--p-primary-hover-color);
 }
 
-.mobile-menu-toggle {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0.5rem;
-	border: 1px solid var(--color-border);
-	border-radius: var(--radius-md);
+:host ::ng-deep .primary-menubar.p-menubar {
+	padding: 0;
+	border: 0;
 	background: transparent;
-	color: var(--color-text-primary);
-	transition: background-color var(--transition-fast);
 }
 
-.mobile-menu-toggle:hover {
+:host ::ng-deep .primary-menubar .p-menubar-root-list {
+	gap: 0.25rem;
+}
+
+.mobile-menu__link {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.625rem 0.75rem;
+	border-radius: 0.5rem;
+	text-decoration: none;
+	color: var(--color-text-primary);
+	transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.mobile-menu__link:hover {
 	background: #f1f5f9;
 }
 
-.mobile-menu-toggle:focus-visible {
+.mobile-menu__link--active {
+	background: var(--p-surface-100);
+	color: var(--p-primary-hover-color);
+}
+
+:host ::ng-deep .menu-button {
+	color: var(--color-text-primary);
+}
+
+:host ::ng-deep .menu-button:focus-visible {
 	outline: none;
 	box-shadow:
 		0 0 0 2px var(--p-primary-color),
 		0 0 0 4px var(--color-surface);
+	border-radius: var(--radius-md);
+}
+
+:host ::ng-deep .mobile-menu-popup.p-menu {
+	min-width: 14rem;
 }
 
 :host ::ng-deep .register-button {

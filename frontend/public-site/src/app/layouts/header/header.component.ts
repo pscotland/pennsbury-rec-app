@@ -1,17 +1,25 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { MenuModule } from 'primeng/menu';
+import { MenubarModule } from 'primeng/menubar';
 
 import {
+  PublicNavItem,
   PUBLIC_ACTION_LINKS,
   PUBLIC_PRIMARY_NAV
 } from '../../core/constants/public-navigation.constants';
-import { MobileNavComponent } from '../mobile-nav/mobile-nav.component';
+
+interface HeaderMenuItem extends MenuItem {
+  exact?: boolean;
+  mobileOnly?: boolean;
+}
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, MobileNavComponent, ButtonModule],
+  imports: [RouterLink, RouterLinkActive, ButtonModule, MenubarModule, MenuModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -19,13 +27,31 @@ export class HeaderComponent {
   protected readonly primaryNav = PUBLIC_PRIMARY_NAV;
   protected readonly registerCommands = PUBLIC_ACTION_LINKS.register;
   protected readonly adminLoginCommands = PUBLIC_ACTION_LINKS.adminLogin;
-  protected readonly mobileNavOpen = signal(false);
 
-  protected toggleMobileNav(): void {
-    this.mobileNavOpen.update((isOpen) => !isOpen);
-  }
+  protected readonly menuItems: HeaderMenuItem[] = [
+    ...this.primaryNav.map((item) => this.toMenuItem(item)),
+    { separator: true, mobileOnly: true },
+    {
+      label: 'Admin Login',
+      routerLink: this.adminLoginCommands,
+      icon: 'pi pi-lock',
+      mobileOnly: true
+    },
+    {
+      label: 'Register',
+      routerLink: this.registerCommands,
+      icon: 'pi pi-user-plus',
+      mobileOnly: true
+    }
+  ];
 
-  protected updateMobileNavState(isOpen: boolean): void {
-    this.mobileNavOpen.set(isOpen);
+  protected readonly desktopMenuItems = this.menuItems.filter((item) => !item.mobileOnly);
+
+  private toMenuItem(item: PublicNavItem): HeaderMenuItem {
+    return {
+      label: item.label,
+      routerLink: item.commands,
+      exact: item.exact
+    };
   }
 }
