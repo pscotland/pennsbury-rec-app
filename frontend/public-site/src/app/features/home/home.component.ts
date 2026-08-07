@@ -15,15 +15,7 @@ import { ContactPreviewComponent } from './components/contact-preview/contact-pr
     SponsorsComponent,
     ContactPreviewComponent
   ],
-  template: `
-    <section>
-      <app-hero></app-hero>
-      <app-upcoming-events></app-upcoming-events>
-      <app-volunteer></app-volunteer>
-      <app-sponsors></app-sponsors>
-      <app-contact-preview></app-contact-preview>
-    </section>
-  `,
-  styles: []
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {}

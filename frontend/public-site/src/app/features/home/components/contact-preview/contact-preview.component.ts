@@ -3,12 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-contact-preview',
   standalone: true,
-  template: `
-    <section>
-      <h2>Contact</h2>
-      <p>TODO: Add contact preview content.</p>
-    </section>
-  `,
-  styles: []
+  templateUrl: './contact-preview.component.html',
+  styleUrl: './contact-preview.component.scss'
 })
 export class ContactPreviewComponent {}
