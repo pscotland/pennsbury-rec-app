@@ -15,9 +15,9 @@
         <li>
           <a
             [routerLink]="item.commands"
-            routerLinkActive="bg-surface-muted text-primary-hover"
+            routerLinkActive="ui-nav-link-active"
             [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-            class="block rounded-lg px-3 py-3 text-base font-medium text-[var(--color-text-primary)] no-underline transition-colors hover:bg-slate-100"
+            class="ui-mobile-nav-link"
             (click)="closeDrawer()"
           >
             {{ item.label }}
@@ -29,7 +29,7 @@
     <div class="mt-6 flex flex-col gap-3">
       <a
         [routerLink]="registerCommands()"
-        class="inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-contrast no-underline transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        class="ui-cta-link ui-cta-link-block"
         (click)="closeDrawer()"
       >
         Register
@@ -37,7 +37,7 @@
 
       <a
         [routerLink]="adminLoginCommands()"
-        class="inline-flex items-center justify-center rounded-lg border border-[var(--color-border)] px-4 py-2.5 text-sm font-semibold text-[var(--color-text-primary)] no-underline transition-colors hover:bg-slate-50"
+        class="ui-secondary-link"
         (click)="closeDrawer()"
       >
         Admin Login

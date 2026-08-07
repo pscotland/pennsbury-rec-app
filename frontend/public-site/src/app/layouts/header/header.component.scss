@@ -1,8 +1,3 @@
 :host {
 	display: block;
 }
-
-:host ::ng-deep .p-button.p-component {
-	border-radius: var(--radius-md);
-	font-weight: 700;
-}
