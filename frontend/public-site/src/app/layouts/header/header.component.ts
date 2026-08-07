@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 
 import {
   PUBLIC_ACTION_LINKS,
@@ -10,7 +11,7 @@ import { MobileNavComponent } from '../mobile-nav/mobile-nav.component';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, MobileNavComponent],
+  imports: [RouterLink, RouterLinkActive, MobileNavComponent, ButtonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

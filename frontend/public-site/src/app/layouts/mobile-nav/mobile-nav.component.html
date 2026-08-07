@@ -9,15 +9,15 @@
   header="Navigation"
   styleClass="w-full max-w-80"
 >
-  <nav aria-label="Mobile primary navigation" class="pt-2">
-    <ul class="m-0 list-none p-0">
+  <nav aria-label="Mobile primary navigation" class="mobile-nav">
+    <ul class="mobile-nav__list">
       @for (item of links(); track item.label) {
         <li>
           <a
             [routerLink]="item.commands"
-            routerLinkActive="ui-nav-link-active"
+            routerLinkActive="mobile-nav__link--active"
             [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-            class="ui-mobile-nav-link"
+            class="mobile-nav__link"
             (click)="closeDrawer()"
           >
             {{ item.label }}
@@ -26,18 +26,17 @@
       }
     </ul>
 
-    <div class="mt-6 flex flex-col gap-3">
-      <a
+    <div class="mobile-nav__actions">
+      <p-button
+        label="Register"
         [routerLink]="registerCommands()"
-        class="ui-cta-link ui-cta-link-block"
-        (click)="closeDrawer()"
-      >
-        Register
-      </a>
+        styleClass="mobile-nav__register-button w-full"
+        (onClick)="closeDrawer()"
+      ></p-button>
 
       <a
         [routerLink]="adminLoginCommands()"
-        class="ui-secondary-link"
+        class="mobile-nav__secondary-link"
         (click)="closeDrawer()"
       >
         Admin Login
