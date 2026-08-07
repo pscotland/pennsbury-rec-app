@@ -13,7 +13,7 @@
       aria-label="Parks and Recreation Council home"
     >
       <span
-        class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-[0_6px_20px_rgba(37,99,235,0.28)]"
+        class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary-hover text-primary-contrast shadow-md"
         aria-hidden="true"
       >
         <i class="pi pi-users text-sm"></i>
@@ -32,7 +32,7 @@
           <li>
             <a
               [routerLink]="item.commands"
-              routerLinkActive="bg-blue-50 text-blue-700"
+              routerLinkActive="bg-surface-muted text-primary-hover"
               [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
               class="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-text-secondary)] no-underline transition-colors hover:bg-slate-100 hover:text-[var(--color-text-primary)]"
             >
@@ -46,14 +46,14 @@
     <div class="hidden items-center gap-4 md:flex">
       <a
         [routerLink]="adminLoginCommands"
-        class="rounded-md px-1 py-1 text-sm font-medium text-[var(--color-text-secondary)] no-underline transition-colors hover:text-blue-700"
+        class="rounded-md px-1 py-1 text-sm font-medium text-[var(--color-text-secondary)] no-underline transition-colors hover:text-primary-hover"
       >
         Admin Login
       </a>
 
       <a
         [routerLink]="registerCommands"
-        class="inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+        class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-contrast no-underline shadow-sm transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       >
         Register
       </a>
@@ -61,7 +61,7 @@
 
     <button
       type="button"
-      class="ml-auto inline-flex items-center justify-center rounded-md border border-[var(--color-border)] p-2 text-[var(--color-text-primary)] transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 md:hidden"
+      class="ml-auto inline-flex items-center justify-center rounded-md border border-[var(--color-border)] p-2 text-[var(--color-text-primary)] transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 md:hidden"
       aria-label="Open mobile navigation"
       [attr.aria-expanded]="mobileNavOpen()"
       aria-controls="public-mobile-nav-drawer"

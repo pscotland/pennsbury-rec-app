@@ -16,16 +16,17 @@ $text-primary: #111827;
 $text-secondary: #4b5563;
 
 @mixin register-color-tokens() {
-	--color-primary: #{$primary};
-	--color-primary-hover: #{$primary-hover};
-	--color-secondary: #{$secondary};
-	--color-accent: #{$accent};
-	--color-success: #{$success};
-	--color-warning: #{$warning};
-	--color-danger: #{$danger};
-	--color-surface: #{$surface};
-	--color-background: #{$background};
-	--color-border: #{$border};
-	--color-text-primary: #{$text-primary};
-	--color-text-secondary: #{$text-secondary};
+	/* Bridge semantic app tokens to Prime theme tokens with safe fallbacks. */
+	--color-primary: var(--p-primary-color, #{$primary});
+	--color-primary-hover: var(--p-primary-hover-color, #{$primary-hover});
+	--color-secondary: var(--p-highlight-background, #{$secondary});
+	--color-accent: var(--p-highlight-color, #{$accent});
+	--color-success: var(--p-green-500, #{$success});
+	--color-warning: var(--p-orange-500, #{$warning});
+	--color-danger: var(--p-red-500, #{$danger});
+	--color-surface: var(--p-content-background, #{$surface});
+	--color-background: var(--p-surface-50, #{$background});
+	--color-border: var(--p-content-border-color, #{$border});
+	--color-text-primary: var(--p-text-color, #{$text-primary});
+	--color-text-secondary: var(--p-text-muted-color, #{$text-secondary});
 }
