@@ -1,7 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
-import { ButtonModule } from 'primeng/button';
 import { DrawerModule } from 'primeng/drawer';
 
 import { PublicNavItem } from '../../core/constants/public-navigation.constants';
@@ -9,7 +8,7 @@ import { PublicNavItem } from '../../core/constants/public-navigation.constants'
 @Component({
   selector: 'app-mobile-nav',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ButtonModule, DrawerModule],
+  imports: [RouterLink, RouterLinkActive, DrawerModule],
   templateUrl: './mobile-nav.component.html',
   styleUrl: './mobile-nav.component.scss'
 })
