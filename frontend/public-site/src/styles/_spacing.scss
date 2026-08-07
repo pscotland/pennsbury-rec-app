@@ -1,1 +1,20 @@
-// TODO: Define the spacing scale and layout spacing utilities.
+// Spacing tokens: 8-point system used across layout and components.
+$space-4: 4px;
+$space-8: 8px;
+$space-16: 16px;
+$space-24: 24px;
+$space-32: 32px;
+$space-48: 48px;
+$space-64: 64px;
+$space-96: 96px;
+
+@mixin register-spacing-tokens() {
+	--space-4: #{$space-4};
+	--space-8: #{$space-8};
+	--space-16: #{$space-16};
+	--space-24: #{$space-24};
+	--space-32: #{$space-32};
+	--space-48: #{$space-48};
+	--space-64: #{$space-64};
+	--space-96: #{$space-96};
+}

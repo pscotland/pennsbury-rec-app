@@ -1,1 +1,28 @@
-// TODO: Define reusable utility classes and helper mixins.
+// Project-specific utilities only. Tailwind remains the primary utility system.
+
+.u-container {
+	width: min(100% - (2 * var(--container-padding-inline)), var(--container-width));
+	margin-inline: auto;
+}
+
+.u-surface {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-sm);
+}
+
+.u-text-muted {
+	color: var(--color-text-secondary);
+}
+
+.u-flow > * + * {
+	margin-top: var(--space-16);
+}
+
+.u-focus-ring {
+	&:focus-visible {
+		outline: 3px solid color-mix(in srgb, var(--color-primary) 70%, white 30%);
+		outline-offset: 2px;
+	}
+}

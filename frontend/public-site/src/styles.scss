@@ -1,8 +1,58 @@
-@use 'styles/variables';
-@use 'styles/colors';
-@use 'styles/spacing';
-@use 'styles/typography';
+/* Global UI foundation: Tailwind, typography, tokens, and PrimeNG hooks. */
+@use 'styles/colors' as colors;
+@use 'styles/spacing' as spacing;
+@use 'styles/typography' as typography;
+@use 'styles/variables' as variables;
 @use 'styles/utilities';
+@use 'styles/primeng-overrides';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import 'primeicons/primeicons.css';
 
-/* TODO: Import the production design system once visual standards are finalized. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @include colors.register-color-tokens();
+  @include spacing.register-spacing-tokens();
+  @include typography.register-typography-tokens();
+  @include variables.register-global-tokens();
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-line-height);
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@include typography.apply-typography-foundation();
+
+a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-primary-hover);
+  }
+}
+
+/* WCAG-friendly default focus indication for keyboard users. */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 70%, white 30%);
+  outline-offset: 2px;
+}

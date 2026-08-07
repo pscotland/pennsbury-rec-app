@@ -1,1 +1,31 @@
-// TODO: Define the public-site color palette tokens and semantic aliases.
+// Color tokens: semantic palette for all app and component styling.
+$primary: #2563eb;
+$primary-hover: #1d4ed8;
+$secondary: #0ea5e9;
+$accent: #f59e0b;
+
+$success: #16a34a;
+$warning: #f97316;
+$danger: #dc2626;
+
+$surface: #ffffff;
+$background: #f8fafc;
+$border: #e5e7eb;
+
+$text-primary: #111827;
+$text-secondary: #4b5563;
+
+@mixin register-color-tokens() {
+	--color-primary: #{$primary};
+	--color-primary-hover: #{$primary-hover};
+	--color-secondary: #{$secondary};
+	--color-accent: #{$accent};
+	--color-success: #{$success};
+	--color-warning: #{$warning};
+	--color-danger: #{$danger};
+	--color-surface: #{$surface};
+	--color-background: #{$background};
+	--color-border: #{$border};
+	--color-text-primary: #{$text-primary};
+	--color-text-secondary: #{$text-secondary};
+}
