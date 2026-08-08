@@ -1,0 +1,29 @@
+@if (routerLink()) {
+  <a
+    pButton
+    [routerLink]="routerLink()"
+    [class]="hostClass()"
+    [attr.aria-label]="ariaLabel()"
+    (click)="clicked.emit($event)"
+  >
+    @if (loading()) {
+      <i class="pi pi-spin pi-spinner" aria-hidden="true"></i>
+    }
+    <ng-content />
+  </a>
+} @else {
+  <button
+    pButton
+    [type]="type()"
+    [class]="hostClass()"
+    [disabled]="disabled() || loading()"
+    [attr.aria-label]="ariaLabel()"
+    [attr.aria-busy]="loading() ? 'true' : null"
+    (click)="clicked.emit($event)"
+  >
+    @if (loading()) {
+      <i class="pi pi-spin pi-spinner" aria-hidden="true"></i>
+    }
+    <ng-content />
+  </button>
+}

@@ -1,0 +1,9 @@
+<div class="info-card">
+  <div class="info-card__icon" [style.background]="iconColor() + '18'" [style.color]="iconColor()">
+    <i [class]="'pi ' + icon()" aria-hidden="true"></i>
+  </div>
+  <div class="info-card__body">
+    <span class="info-card__label">{{ label() }}</span>
+    <span class="info-card__value">{{ value() }}</span>
+  </div>
+</div>

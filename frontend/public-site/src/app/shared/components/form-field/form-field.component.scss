@@ -1,0 +1,47 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: t.$space-7;
+}
+
+.form-field__label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: t.$text-label;
+  font-weight: t.$weight-bold;
+  color: t.$text-secondary;
+}
+
+.form-field__required {
+  color: #ef4444;
+  font-weight: t.$weight-bold;
+}
+
+.form-field__optional {
+  color: t.$text-placeholder;
+  font-weight: t.$weight-normal;
+  font-size: t.$text-label;
+}
+
+.form-field__error {
+  display: flex;
+  align-items: center;
+  gap: t.$space-2;
+  font-size: t.$text-label;
+  color: t.$color-error;
+  font-weight: t.$weight-medium;
+  margin-top: 5px;
+
+  .pi {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+}

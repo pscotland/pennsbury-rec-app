@@ -1,0 +1,11 @@
+<p-select
+  [options]="options()"
+  optionLabel="label"
+  optionValue="value"
+  [placeholder]="placeholder()"
+  [disabled]="isDisabled()"
+  [inputId]="inputId() ?? undefined"
+  [ngModel]="selectedValue()"
+  (ngModelChange)="handleChange($event)"
+  styleClass="app-select"
+/>

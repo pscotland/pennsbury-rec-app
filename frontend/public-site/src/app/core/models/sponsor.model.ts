@@ -3,4 +3,6 @@ export interface Sponsor {
   name: string;
   website?: string;
   logoUrl?: string;
+  color?: string;
+  abbreviation?: string;
 }

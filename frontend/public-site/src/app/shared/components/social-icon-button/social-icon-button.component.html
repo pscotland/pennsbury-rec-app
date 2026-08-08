@@ -1,0 +1,10 @@
+<a
+  [href]="href()"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="social-btn"
+  [class]="'social-btn social-btn--' + platform()"
+  [attr.aria-label]="platform() | titlecase"
+>
+  <i [class]="iconClass()" aria-hidden="true"></i>
+</a>

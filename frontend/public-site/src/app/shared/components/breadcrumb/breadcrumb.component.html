@@ -1,0 +1,14 @@
+<nav aria-label="Breadcrumb" class="breadcrumb" [class.breadcrumb--inverse]="variant() === 'inverse'">
+  <ol class="breadcrumb__list">
+    @for (item of items(); track item.label; let last = $last) {
+      <li class="breadcrumb__item">
+        @if (!last && item.route) {
+          <a [routerLink]="item.route" class="breadcrumb__link">{{ item.label }}</a>
+          <i class="pi pi-chevron-right breadcrumb__sep" aria-hidden="true"></i>
+        } @else {
+          <span class="breadcrumb__current" [attr.aria-current]="last ? 'page' : null">{{ item.label }}</span>
+        }
+      </li>
+    }
+  </ol>
+</nav>

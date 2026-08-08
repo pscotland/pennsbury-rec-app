@@ -1,0 +1,67 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.map {
+  border-radius: t.$radius-card-lg;
+  border: 1px solid t.$border-default;
+  background: linear-gradient(145deg, #dbeafe 0%, t.$color-purple-bg 100%);
+  background-image:
+    linear-gradient(145deg, #dbeafe 0%, t.$color-purple-bg 100%),
+    repeating-linear-gradient(0deg, rgba(37, 99, 235, 0.07) 0px, rgba(37, 99, 235, 0.07) 1px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(90deg, rgba(37, 99, 235, 0.07) 0px, rgba(37, 99, 235, 0.07) 1px, transparent 1px, transparent 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.map__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: t.$space-2;
+  padding: t.$space-5;
+  text-align: center;
+}
+
+.map__pin {
+  @include t.icon-container(44px, t.$radius-icon, t.$color-primary);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  color: t.$text-inverse;
+  background: t.$color-primary;
+  margin-bottom: t.$space-1;
+
+  .pi {
+    font-size: 1.125rem;
+  }
+}
+
+.map__address {
+  font-size: t.$text-body-xs;
+  font-weight: t.$weight-bold;
+  color: #1e40af;
+  margin: 0;
+}
+
+.map__directions {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-2;
+  font-size: t.$text-label;
+  font-weight: t.$weight-semibold;
+  color: t.$color-primary;
+  text-decoration: none;
+  transition: gap t.$transition-fast;
+
+  &:hover {
+    gap: 10px;
+  }
+
+  &:focus-visible {
+    @include t.focus-ring();
+    border-radius: t.$radius-md;
+  }
+}

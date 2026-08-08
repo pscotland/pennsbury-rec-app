@@ -1,0 +1,10 @@
+<div class="stat-ticker" aria-label="Key statistics">
+  <div class="stat-ticker__inner">
+    @for (stat of stats(); track stat.label; let last = $last) {
+      <div class="stat-ticker__cell" [class.stat-ticker__cell--last]="last">
+        <span class="stat-ticker__value">{{ stat.value }}</span>
+        <span class="stat-ticker__label">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</div>

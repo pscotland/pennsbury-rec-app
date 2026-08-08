@@ -1,0 +1,50 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: t.$space-5 t.$space-4;
+  background: t.$surface-white;
+  border: 1px solid t.$border-default;
+  border-radius: 12px;
+  transition: t.$transition-lift, border-color t.$transition-fast;
+  cursor: default;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+  }
+}
+
+.sponsor-card__abbr {
+  width: 44px;
+  height: 44px;
+  border-radius: t.$radius-xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-size: t.$text-label;
+  font-weight: t.$weight-extrabold;
+}
+
+.sponsor-card__logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin: 0 auto 10px;
+}
+
+.sponsor-card__name {
+  font-size: t.$text-micro;
+  font-weight: t.$weight-semibold;
+  color: t.$text-secondary;
+  text-align: center;
+  line-height: 1.35;
+  margin: 0;
+}
