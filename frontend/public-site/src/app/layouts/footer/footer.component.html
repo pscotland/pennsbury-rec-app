@@ -1,27 +1,29 @@
 <footer class="site-footer">
   <div class="site-footer__container">
     <div class="site-footer__grid">
-      <section aria-labelledby="footer-brand-title">
+      <section aria-labelledby="footer-brand-title" class="site-footer__section site-footer__section--desktop">
         <h2 id="footer-brand-title" class="site-footer__title">Council Logo</h2>
         <p class="site-footer__muted site-footer__intro">
           TODO: Add official council brand description and mission summary.
         </p>
       </section>
 
-      <section aria-labelledby="footer-links-title">
+      <section aria-labelledby="footer-links-title" class="site-footer__section site-footer__section--desktop">
         <h2 id="footer-links-title" class="site-footer__title">Quick Links</h2>
-        <ul class="site-footer__list">
-          @for (item of quickLinks; track item.label) {
-            <li>
-              <a [routerLink]="item.commands" class="site-footer__link">
-                {{ item.label }}
-              </a>
-            </li>
-          }
-        </ul>
+        <nav aria-label="Footer navigation">
+          <ul class="site-footer__list">
+            @for (item of quickLinks; track item.label) {
+              <li>
+                <a [routerLink]="item.commands" class="site-footer__link">
+                  {{ item.label }}
+                </a>
+              </li>
+            }
+          </ul>
+        </nav>
       </section>
 
-      <section aria-labelledby="footer-contact-title">
+      <section aria-labelledby="footer-contact-title" class="site-footer__section site-footer__section--desktop">
         <h2 id="footer-contact-title" class="site-footer__title">Contact Information</h2>
         <ul class="site-footer__list site-footer__muted">
           <li>TODO: Add street address placeholder.</li>
@@ -31,14 +33,29 @@
         </ul>
       </section>
 
-      <section aria-labelledby="footer-social-title">
+      <section aria-labelledby="footer-social-title" class="site-footer__section site-footer__section--social">
         <h2 id="footer-social-title" class="site-footer__title">Social Media</h2>
-        <p class="site-footer__muted site-footer__intro">TODO: Add social media links and icons.</p>
+        <ul class="site-footer__social" aria-label="Social media links">
+          @for (socialLink of socialLinks; track socialLink.label) {
+            <li>
+              <a
+                href="#"
+                class="site-footer__social-link"
+                [attr.aria-label]="socialLink.label"
+                [attr.title]="socialLink.label"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i [class]="socialLink.iconClass" aria-hidden="true"></i>
+              </a>
+            </li>
+          }
+        </ul>
       </section>
     </div>
 
     <div class="site-footer__meta">
-      <p class="m-0">Copyright TODO: Recreation Council. All rights reserved.</p>
+      <p class="m-0">&copy; {{ currentYear }} Recreation Council. All rights reserved.</p>
       <nav aria-label="Legal" class="site-footer__legal">
         <a [routerLink]="['/privacy-policy']" class="site-footer__legal-link">
           Privacy Policy
