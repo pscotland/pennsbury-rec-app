@@ -36,6 +36,42 @@
 	min-width: 0;
 }
 
+.site-footer__title--sr-only {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.site-footer__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	text-decoration: none;
+	color: #f8fafc;
+}
+
+.site-logo__badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: var(--radius-lg);
+	background: linear-gradient(135deg, var(--p-primary-color), var(--p-primary-hover-color));
+	color: var(--p-primary-contrast-color);
+	box-shadow: var(--shadow-md);
+}
+
+.site-logo__subtitle {
+	display: block;
+	font-size: 0.625rem;
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	color: #94a3b8;
+}
+
 @media (min-width: 640px) {
 	.site-footer__grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
