@@ -1,6 +1,5 @@
 <span
-  class="badge"
-  [class]="'badge--' + type() + ' badge--' + slug()"
+  [class]="'badge badge--' + type() + ' badge--' + slug()"
   [attr.data-type]="type()"
 >
   @if (type() === 'status') {
