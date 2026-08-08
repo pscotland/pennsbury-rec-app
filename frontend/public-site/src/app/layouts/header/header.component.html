@@ -3,7 +3,7 @@
     Skip to main content
   </a>
 
-  <div class="header-shell">
+  <div class="header-shell header-shell--desktop">
     <a
       [routerLink]="['/']"
       class="site-logo"
@@ -21,7 +21,7 @@
     </a>
 
     <nav aria-label="Primary navigation" class="primary-nav">
-      <p-menubar [model]="desktopMenuItems" styleClass="primary-menubar">
+      <p-menubar [model]="primaryItems" class="primary-menubar">
         <ng-template #item let-item>
           <a
             pRipple
@@ -41,35 +41,129 @@
         Admin Login
       </a>
 
-      <p-button label="Register" [routerLink]="registerCommands" size="small" styleClass="register-button"></p-button>
-    </div>
-
-    <div class="mobile-nav">
-      <p-menu #mobileMenu [model]="menuItems" [popup]="true" styleClass="mobile-menu-popup">
-        <ng-template #item let-item>
-          <a
-            pRipple
-            [routerLink]="item.routerLink"
-            routerLinkActive="mobile-menu__link--active"
-            [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-            class="mobile-menu__link"
-            (click)="mobileMenu.hide()"
-          >
-            @if (item.icon) {
-              <i [class]="item.icon" aria-hidden="true"></i>
-            }
-            <span>{{ item.label }}</span>
-          </a>
-        </ng-template>
-      </p-menu>
-
-      <p-button
-        icon="pi pi-bars"
-        [text]="true"
-        styleClass="menu-button"
-        ariaLabel="Open navigation menu"
-        (onClick)="mobileMenu.toggle($event)"
-      ></p-button>
+      <p-button label="Register" [routerLink]="registerCommands" size="small" class="register-button"></p-button>
     </div>
   </div>
+
+  <div class="header-shell header-shell--tablet">
+    <a
+      [routerLink]="['/']"
+      class="site-logo"
+      aria-label="Parks and Recreation Council home"
+    >
+      <span class="site-logo__badge" aria-hidden="true">
+        <i class="pi pi-users text-sm"></i>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-sm font-extrabold tracking-tight">Riverside</span>
+        <span class="site-logo__subtitle">
+          Recreation Council
+        </span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary navigation" class="tablet-nav">
+      <ul class="tablet-nav__list">
+        @for (item of primaryItems; track item.label) {
+          <li>
+            <a
+              [routerLink]="item.routerLink"
+              routerLinkActive="tablet-nav__link--active"
+              [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+              class="tablet-nav__link"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="tablet-actions">
+      <a [routerLink]="adminLoginCommands" class="admin-link">
+        Admin Login
+      </a>
+
+      <p-button label="Register" [routerLink]="registerCommands" size="small" class="register-button"></p-button>
+    </div>
+  </div>
+
+  <div class="header-shell header-shell--mobile">
+    <a
+      [routerLink]="['/']"
+      class="site-logo"
+      aria-label="Parks and Recreation Council home"
+    >
+      <span class="site-logo__badge" aria-hidden="true">
+        <i class="pi pi-users text-sm"></i>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-sm font-extrabold tracking-tight">Riverside</span>
+        <span class="site-logo__subtitle">
+          Recreation Council
+        </span>
+      </span>
+    </a>
+
+    <p-button
+      icon="pi pi-bars"
+      [text]="true"
+      class="menu-button"
+      ariaLabel="Open navigation menu"
+      (onClick)="openMobileDrawer()"
+    ></p-button>
+  </div>
+
+  <p-drawer
+    position="right"
+    [visible]="mobileDrawerVisible"
+    [modal]="true"
+    [dismissible]="true"
+    [showCloseIcon]="true"
+    [blockScroll]="true"
+    header="Navigation Menu"
+    styleClass="mobile-drawer"
+    (visibleChange)="onMobileDrawerVisibleChange($event)"
+  >
+    <nav aria-label="Primary navigation" class="drawer-nav">
+      <ul class="drawer-nav__list">
+        @for (item of primaryItems; track item.label) {
+          <li>
+            <a
+              pRipple
+              [routerLink]="item.routerLink"
+              routerLinkActive="drawer-nav__link--active"
+              [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+              class="drawer-nav__link"
+              (click)="closeMobileDrawer()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="drawer-actions" aria-label="Account actions">
+      @for (item of actionItems; track item.label) {
+        @if (item.label === 'Register') {
+          <p-button
+            [label]="item.label"
+            [routerLink]="item.routerLink"
+            styleClass="drawer-register-button w-full"
+            (onClick)="closeMobileDrawer()"
+          ></p-button>
+        } @else {
+          <a
+            [routerLink]="item.routerLink"
+            routerLinkActive="drawer-action-link--active"
+            class="drawer-action-link"
+            (click)="closeMobileDrawer()"
+          >
+            {{ item.label }}
+          </a>
+        }
+      }
+    </div>
+  </p-drawer>
 </header>

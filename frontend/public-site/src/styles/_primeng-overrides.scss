@@ -5,3 +5,23 @@
 // - Inputs
 // - Overlays
 // Avoid broad resets or deep selectors that can make upgrades difficult.
+
+/* Header CTA buttons used by desktop actions and mobile drawer. */
+.register-button,
+.drawer-register-button {
+	font-weight: 700;
+	border-radius: var(--radius-md);
+	background: var(--p-primary-color);
+	border-color: var(--p-primary-color);
+	color: var(--p-primary-contrast-color);
+}
+
+.register-button {
+	transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.register-button:hover,
+.drawer-register-button:hover {
+	background: var(--p-primary-hover-color);
+	border-color: var(--p-primary-hover-color);
+}

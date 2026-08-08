@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
-import { MenuModule } from 'primeng/menu';
+import { DrawerModule } from 'primeng/drawer';
 import { MenubarModule } from 'primeng/menubar';
 
 import {
@@ -13,45 +13,58 @@ import {
 
 interface HeaderMenuItem extends MenuItem {
   exact?: boolean;
-  mobileOnly?: boolean;
+  group: 'primary' | 'action';
 }
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ButtonModule, MenubarModule, MenuModule],
+  imports: [RouterLink, RouterLinkActive, ButtonModule, MenubarModule, DrawerModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  protected readonly primaryNav = PUBLIC_PRIMARY_NAV;
   protected readonly registerCommands = PUBLIC_ACTION_LINKS.register;
   protected readonly adminLoginCommands = PUBLIC_ACTION_LINKS.adminLogin;
+  protected mobileDrawerVisible = false;
 
   protected readonly menuItems: HeaderMenuItem[] = [
-    ...this.primaryNav.map((item) => this.toMenuItem(item)),
-    { separator: true, mobileOnly: true },
+    ...PUBLIC_PRIMARY_NAV.map((item) => this.toMenuItem(item)),
     {
       label: 'Admin Login',
       routerLink: this.adminLoginCommands,
       icon: 'pi pi-lock',
-      mobileOnly: true
+      group: 'action'
     },
     {
       label: 'Register',
       routerLink: this.registerCommands,
       icon: 'pi pi-user-plus',
-      mobileOnly: true
+      group: 'action'
     }
   ];
 
-  protected readonly desktopMenuItems = this.menuItems.filter((item) => !item.mobileOnly);
+  protected readonly primaryItems = this.menuItems.filter((item) => item.group === 'primary');
+  protected readonly actionItems = this.menuItems.filter((item) => item.group === 'action');
+
+  protected openMobileDrawer(): void {
+    this.mobileDrawerVisible = true;
+  }
+
+  protected closeMobileDrawer(): void {
+    this.mobileDrawerVisible = false;
+  }
+
+  protected onMobileDrawerVisibleChange(visible: boolean): void {
+    this.mobileDrawerVisible = visible;
+  }
 
   private toMenuItem(item: PublicNavItem): HeaderMenuItem {
     return {
       label: item.label,
       routerLink: item.commands,
-      exact: item.exact
+      exact: item.exact,
+      group: 'primary'
     };
   }
 }
