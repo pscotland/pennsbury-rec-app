@@ -1,3 +1,5 @@
+@use 'design-tokens' as t;
+
 :host {
 	display: inline-flex;
 }
@@ -68,14 +70,13 @@
 }
 
 .mobile-nav__link:hover {
-	background: #f1f5f9;
+	background: t.$surface-nav-pill-hover;
 }
 
 .mobile-nav__link--active {
-	background: var(--p-surface-100);
-	color: var(--p-primary-hover-color);
-	text-decoration: underline;
-	text-underline-offset: 0.18rem;
+	background: t.$surface-nav-pill-active;
+	color: t.$color-primary;
+	font-weight: 700;
 }
 
 .mobile-nav__actions {
@@ -100,11 +101,11 @@
 }
 
 .mobile-nav__action-link:hover {
-	color: var(--p-primary-hover-color);
-	background: #f8fafc;
+	color: t.$color-primary;
+	background: t.$surface-nav-pill-hover;
 }
 
 .mobile-nav__action-link--active {
-	color: var(--p-primary-hover-color);
-	background: var(--p-surface-100);
+	color: t.$color-primary;
+	background: t.$surface-nav-pill-active;
 }

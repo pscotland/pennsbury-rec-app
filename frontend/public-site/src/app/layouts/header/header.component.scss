@@ -1,3 +1,5 @@
+@use 'design-tokens' as t;
+
 :host {
 	display: block;
 }
@@ -141,20 +143,21 @@
 .tablet-nav__link:hover,
 
 .tablet-nav__link:hover {
-	background: #f1f5f9;
+	background: t.$surface-nav-pill-hover;
 }
 
 .primary-nav__link:hover,
 .tablet-nav__link:hover {
-	color: var(--color-text-primary);
+	color: t.$text-primary;
 }
 
 .primary-nav__link--active,
 .tablet-nav__link--active,
 
 .tablet-nav__link--active {
-	background: var(--p-surface-100);
-	color: var(--p-primary-hover-color);
+	background: t.$surface-nav-pill-active;
+	color: t.$color-primary;
+	font-weight: 600;
 }
 
 @media (min-width: 768px) and (max-width: 959px) {
@@ -190,13 +193,23 @@
 }
 
 .admin-link {
-	padding: 0.25rem;
+	padding: 6px 4px;
 	border-radius: var(--radius-sm);
 	font-size: 0.875rem;
 	font-weight: 500;
 	color: var(--color-text-secondary);
 	text-decoration: none;
 	transition: color var(--transition-fast);
+
+	&:hover {
+		color: t.$color-primary;
+	}
+
+	&:focus-visible {
+		outline: 2px solid t.$color-primary;
+		outline-offset: 2px;
+		border-radius: t.$radius-md;
+	}
 }
 
 .admin-link:hover {
