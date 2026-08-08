@@ -124,7 +124,8 @@
 
 .primary-nav__link,
 .tablet-nav__link,
-.drawer-nav__link {
+
+.tablet-nav__link {
 	display: inline-flex;
 	align-items: center;
 	padding: 0.5rem 0.75rem;
@@ -136,13 +137,10 @@
 	transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
-.drawer-nav__link {
-	color: var(--color-text-primary);
-}
-
 .primary-nav__link:hover,
 .tablet-nav__link:hover,
-.drawer-nav__link:hover {
+
+.tablet-nav__link:hover {
 	background: #f1f5f9;
 }
 
@@ -153,7 +151,8 @@
 
 .primary-nav__link--active,
 .tablet-nav__link--active,
-.drawer-nav__link--active {
+
+.tablet-nav__link--active {
 	background: var(--p-surface-100);
 	color: var(--p-primary-hover-color);
 }
@@ -208,52 +207,4 @@
 	padding: 0;
 	border: 0;
 	background: transparent;
-}
-
-.drawer-nav__list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
-}
-
-.drawer-actions {
-	margin-top: 1rem;
-	padding-top: 1rem;
-	border-top: 1px solid var(--color-border);
-	display: flex;
-	flex-direction: column;
-	gap: 0.625rem;
-}
-
-.drawer-action-link {
-	display: inline-flex;
-	align-items: center;
-	padding: 0.5rem 0.75rem;
-	border-radius: 0.5rem;
-	font-size: 0.9rem;
-	font-weight: 500;
-	text-decoration: none;
-	color: var(--color-text-secondary);
-	transition: color var(--transition-fast), background-color var(--transition-fast);
-}
-
-.drawer-action-link:hover {
-	color: var(--p-primary-hover-color);
-	background: #f8fafc;
-}
-
-.drawer-action-link--active {
-	color: var(--p-primary-hover-color);
-	background: var(--p-surface-100);
-}
-
-:host ::ng-deep .menu-button {
-	color: var(--color-text-primary);
-}
-
-:host ::ng-deep .mobile-drawer.p-drawer {
-	width: min(20rem, 86vw);
 }

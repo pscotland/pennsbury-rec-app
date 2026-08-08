@@ -105,65 +105,10 @@
       </span>
     </a>
 
-    <p-button
-      icon="pi pi-bars"
-      [text]="true"
-      class="menu-button"
-      ariaLabel="Open navigation menu"
-      (onClick)="openMobileDrawer()"
-    ></p-button>
+    <app-mobile-nav
+      [primaryItems]="primaryItems"
+      [adminLoginCommands]="adminLoginCommands"
+      [registerCommands]="registerCommands"
+    />
   </div>
-
-  <p-drawer
-    position="right"
-    [visible]="mobileDrawerVisible"
-    [modal]="true"
-    [dismissible]="true"
-    [showCloseIcon]="true"
-    [blockScroll]="true"
-    header="Navigation Menu"
-    styleClass="mobile-drawer"
-    (visibleChange)="onMobileDrawerVisibleChange($event)"
-  >
-    <nav aria-label="Primary navigation" class="drawer-nav">
-      <ul class="drawer-nav__list">
-        @for (item of primaryItems; track item.label) {
-          <li>
-            <a
-              pRipple
-              [routerLink]="item.routerLink"
-              routerLinkActive="drawer-nav__link--active"
-              [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-              class="drawer-nav__link"
-              (click)="closeMobileDrawer()"
-            >
-              {{ item.label }}
-            </a>
-          </li>
-        }
-      </ul>
-    </nav>
-
-    <div class="drawer-actions" aria-label="Account actions">
-      @for (item of actionItems; track item.label) {
-        @if (item.label === 'Register') {
-          <p-button
-            [label]="item.label"
-            [routerLink]="item.routerLink"
-            styleClass="drawer-register-button w-full"
-            (onClick)="closeMobileDrawer()"
-          ></p-button>
-        } @else {
-          <a
-            [routerLink]="item.routerLink"
-            routerLinkActive="drawer-action-link--active"
-            class="drawer-action-link"
-            (click)="closeMobileDrawer()"
-          >
-            {{ item.label }}
-          </a>
-        }
-      }
-    </div>
-  </p-drawer>
 </header>
