@@ -33,11 +33,11 @@ export interface HomeContactItem {
 }
 
 export const HOME_HERO: HomeHeroContent = {
-  badge: 'Riverside Recreation Council',
+  badge: 'Pennsbury Recreation Council',
   heading: 'Where Every Family',
   headingAccent: 'Belongs',
   subtitle:
-    'Connecting Riverside families through quality recreational programs, sports leagues, and community events for all ages and skill levels.',
+    'Connecting Pennsbury families through quality recreational programs, sports leagues, and community events for all ages and skill levels.',
   imageUrl: 'assets/images/hero/home-photo-1632300951015-42d7df909581.jpeg'
 };
 
@@ -45,7 +45,7 @@ export const HOME_STATS: HomeStat[] = [
   { value: '2,400+', label: 'Registered Athletes' },
   { value: '18', label: 'Programs' },
   { value: '340+', label: 'Volunteers' },
-  { value: '30 yrs', label: 'Serving Riverside' }
+  { value: '30 yrs', label: 'Serving Pennsbury' }
 ];
 
 export const HOME_EVENTS: Event[] = [
@@ -65,7 +65,7 @@ export const HOME_EVENTS: Event[] = [
       'Lace up and join hundreds of neighbors for our annual community Fun Run. All paces welcome.',
     startDate: '2026-08-24',
     time: '8:00 AM Start',
-    location: 'Riverside Park - Main Entrance',
+    location: 'Pennsbury Park - Main Entrance',
     tags: [{ label: 'Community', color: '#F97316' }]
   },
   {
@@ -81,7 +81,7 @@ export const HOME_EVENTS: Event[] = [
 
 export const HOME_VOLUNTEER: HomeVolunteerContent = {
   imageUrl: 'assets/images/hero/volunteer-placeholder.svg',
-  imageAlt: 'Community volunteers at a Riverside recreation event',
+  imageAlt: 'Community volunteers at a Pennsbury recreation event',
   headingLine1: 'Be the Reason',
   headingLine2: 'Kids Show Up',
   body:
@@ -97,21 +97,21 @@ export const HOME_VOLUNTEER: HomeVolunteerContent = {
 };
 
 export const HOME_SPONSORS: Sponsor[] = [
-  { id: 'riverside-bank', name: 'Riverside Bank', color: '#2563EB', abbreviation: 'RB' },
+  { id: 'pennsbury-bank', name: 'Pennsbury Bank', color: '#2563EB', abbreviation: 'RB' },
   { id: 'greenfield-hardware', name: 'Greenfield Hardware', color: '#16A34A', abbreviation: 'GH' },
   { id: 'peak-physical-therapy', name: 'Peak Physical Therapy', color: '#F97316', abbreviation: 'PPT' },
   { id: 'oakwood-pediatrics', name: 'Oakwood Pediatrics', color: '#2563EB', abbreviation: 'OP' },
   { id: 'sunrise-insurance', name: 'Sunrise Insurance', color: '#16A34A', abbreviation: 'SI' },
   { id: 'tonys-pizza-grill', name: "Tony's Pizza & Grill", color: '#F97316', abbreviation: 'TPG' },
   { id: 'valley-dental-group', name: 'Valley Dental Group', color: '#7C3AED', abbreviation: 'VDG' },
-  { id: 'riverside-printing', name: 'Riverside Printing Co.', color: '#2563EB', abbreviation: 'RPC' }
+  { id: 'pennsbury-printing', name: 'Pennsbury Printing Co.', color: '#2563EB', abbreviation: 'RPC' }
 ];
 
 export const HOME_CONTACT_ITEMS: HomeContactItem[] = [
   {
     icon: 'pi-map-marker',
     label: 'Address',
-    value: '400 Oak Avenue, Riverside, CA 92501',
+    value: '400 Oak Avenue, Pennsbury, MD 92501',
     iconColor: '#2563EB'
   },
   {
@@ -123,7 +123,7 @@ export const HOME_CONTACT_ITEMS: HomeContactItem[] = [
   {
     icon: 'pi-envelope',
     label: 'Email',
-    value: 'info@riversiderec.org',
+    value: 'info@pennsburyrec.org',
     iconColor: '#F97316'
   },
   {
@@ -134,4 +134,4 @@ export const HOME_CONTACT_ITEMS: HomeContactItem[] = [
   }
 ];
 
-export const HOME_MAP_ADDRESS = '400 Oak Avenue, Riverside CA 92501';
+export const HOME_MAP_ADDRESS = '400 Oak Avenue, Pennsbury MD 92501';

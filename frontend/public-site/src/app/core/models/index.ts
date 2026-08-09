@@ -68,7 +68,7 @@ export const PROGRAMS: Program[] = [
     description: "America's pastime, taught with patience and a whole lot of team spirit.",
     longDescription: 'Little League Baseball provides a structured, fun environment for young athletes to learn the fundamentals of baseball. Divisions are organized by age and skill, ensuring every player gets meaningful playing time.',
     schedule: 'Games: Saturdays & Sundays\nPractice: Mondays & Wednesdays 5:30 PM',
-    location: 'Riverside Memorial Ballpark — Fields A & B',
+    location: 'Pennsbury Memorial Ballpark — Fields A & B',
     fee: '$75 / season',
     minAge: 6,
     maxAge: 16,
@@ -85,7 +85,7 @@ export const PROGRAMS: Program[] = [
     description: 'From first dribbles to game-day strategy — our courts are where players shine.',
     longDescription: 'Youth Basketball teaches ball-handling, passing, shooting, and sportsmanship across five age-based divisions. Weekend leagues run January through March with playoff weekends that families love.',
     schedule: 'Games: Sundays 10:00 AM – 4:00 PM\nPractice: Fridays 5:00 PM – 7:00 PM',
-    location: 'Riverside Community Gymnasium',
+    location: 'Pennsbury Community Gymnasium',
     fee: '$90 / season',
     minAge: 7,
     maxAge: 15,
@@ -102,7 +102,7 @@ export const PROGRAMS: Program[] = [
     description: 'Group and private swim lessons for all ages and skill levels — from splash to stroke.',
     longDescription: 'Our certified swim instructors offer progressive levels from water acclimation to competitive strokes. Small class sizes ensure personalized attention. Session one begins in January and sessions run every six weeks throughout the year.',
     schedule: 'Mon / Wed / Fri — Multiple time slots\n7:00 AM · 10:00 AM · 4:30 PM · 6:00 PM',
-    location: 'Riverside Aquatic Center — Indoor Pool',
+    location: 'Pennsbury Aquatic Center — Indoor Pool',
     fee: 'From $120 / 8-week session',
     minAge: 3,
     maxAge: 99,
@@ -119,7 +119,7 @@ export const PROGRAMS: Program[] = [
     description: 'Eight weeks of outdoor adventures, STEM, arts, and sports — friends made for life.',
     longDescription: 'Summer Adventure Camp is our flagship program, running eight weeks from late June through mid-August. Campers rotate through outdoor sports, nature exploration, creative arts, and STEM activities. Extended care available.',
     schedule: 'Mon – Fri  7:30 AM – 5:30 PM\n(Extended care until 6:30 PM available)',
-    location: 'Riverside Park & Recreation Center',
+    location: 'Pennsbury Park & Recreation Center',
     fee: '$225 / week · Sibling discount available',
     minAge: 6,
     maxAge: 12,
@@ -174,7 +174,7 @@ export const EVENTS: Event[] = [
     month: 'AUG',
     day: '24',
     title: 'Community Fun Run 5K',
-    location: 'Riverside Park — Main Entrance',
+    location: 'Pennsbury Park — Main Entrance',
     time: '8:00 AM Start',
     description: 'Lace up and join hundreds of neighbors for our annual community Fun Run. All paces welcome!',
     tag: 'Community',
@@ -234,11 +234,11 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: 'August 5, 2026',
     dateIso: '2026-08-05',
     category: 'Announcement',
-    title: 'New All-Weather Turf Field Coming to Riverside Park in 2027',
+    title: 'New All-Weather Turf Field Coming to Pennsbury Park in 2027',
     excerpt: 'The Council secured $1.2M in county grants to fund a new artificial turf field, expanding year-round programming for over 800 registered athletes.',
     img: IMAGES.newsTurf,
     featured: true,
-    body: 'After two years of planning and grant-writing, Riverside Recreation Council is thrilled to announce a $1.2 million county infrastructure grant to build a new all-weather artificial turf field at Riverside Park. Construction begins in March 2027, with an expected opening for the fall 2027 season.',
+    body: 'After two years of planning and grant-writing, Pennsbury Recreation Council is thrilled to announce a $1.2 million county infrastructure grant to build a new all-weather artificial turf field at Pennsbury Park. Construction begins in March 2027, with an expected opening for the fall 2027 season.',
   },
   {
     id: 'summer-camp-2026',
@@ -286,7 +286,7 @@ export const BOARD_MEMBERS = [
   { name: 'Raymond Ortiz', title: 'Vice President', initials: 'RO', color: '#16A34A' },
   { name: 'Keiko Tanaka', title: 'Treasurer', initials: 'KT', color: '#F97316' },
   { name: 'David Chen', title: 'Secretary', initials: 'DC', color: '#7C3AED' },
-  { name: 'Maria Delgado', title: 'Programs Director', initials: 'MD', color: '#2563EB' },
+  { name: 'Maria Delgado', title: 'Programs Director', initials: 'MD ', color: '#2563EB' },
   { name: 'James Okoye', title: 'Facilities Director', initials: 'JO', color: '#16A34A' },
 ]
 
@@ -306,7 +306,7 @@ export const FAQ = [
   },
   {
     q: 'Are financial assistance programs available?',
-    a: 'Yes. The Riverside Recreation Scholarship Fund offers partial and full fee waivers for qualifying families. Contact our office to request a confidential application.',
+    a: 'Yes. The Pennsbury Recreation Scholarship Fund offers partial and full fee waivers for qualifying families. Contact our office to request a confidential application.',
   },
   {
     q: 'Can my child participate if they have never played before?',
@@ -316,12 +316,12 @@ export const FAQ = [
 
 // ─── Sponsors ─────────────────────────────────────────────────────────────────
 export const SPONSORS = [
-  { name: 'Riverside Bank', abbr: 'RB', color: '#2563EB' },
+  { name: 'Pennsbury Bank', abbr: 'RB', color: '#2563EB' },
   { name: 'Greenfield Hardware', abbr: 'GH', color: '#16A34A' },
   { name: 'Peak Physical Therapy', abbr: 'PPT', color: '#F97316' },
   { name: 'Oakwood Pediatrics', abbr: 'OP', color: '#2563EB' },
   { name: 'Sunrise Insurance', abbr: 'SI', color: '#16A34A' },
   { name: "Tony's Pizza & Grill", abbr: 'TPG', color: '#F97316' },
   { name: 'Valley Dental Group', abbr: 'VDG', color: '#7C3AED' },
-  { name: 'Riverside Printing Co.', abbr: 'RPC', color: '#2563EB' },
+  { name: 'Pennsbury Printing Co.', abbr: 'RPC', color: '#2563EB' },
 ]
