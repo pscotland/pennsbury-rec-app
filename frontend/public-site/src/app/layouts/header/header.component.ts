@@ -3,13 +3,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
-import { MobileNavComponent } from '../mobile-nav/mobile-nav.component';
 
 import {
   PublicNavItem,
   PUBLIC_ACTION_LINKS,
   PUBLIC_PRIMARY_NAV
 } from '../../core/constants/public-navigation.constants';
+import { MobileNavComponent } from '../mobile-nav/mobile-nav.component';
 
 interface HeaderMenuItem extends MenuItem {
   exact?: boolean;
