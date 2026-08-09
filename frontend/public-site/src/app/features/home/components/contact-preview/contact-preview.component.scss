@@ -1,1 +1,43 @@
-/* Styles for the contact-preview component. */
+@use 'design-tokens' as t;
+
+:host {
+	display: block;
+}
+
+.contact-preview {
+	padding: t.$space-24 t.$section-gutter;
+	background: t.$surface-white;
+}
+
+.contact-preview__container {
+	max-width: t.$content-max-width;
+	margin: 0 auto;
+}
+
+.contact-preview__grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: t.$space-5;
+	margin-bottom: t.$space-10;
+}
+
+.contact-preview__map {
+	display: block;
+	margin-bottom: t.$space-8;
+}
+
+.contact-preview__actions {
+	text-align: center;
+}
+
+@media (max-width: #{t.$bp-tablet}) {
+	.contact-preview__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: #{t.$bp-mobile}) {
+	.contact-preview__grid {
+		grid-template-columns: 1fr;
+	}
+}

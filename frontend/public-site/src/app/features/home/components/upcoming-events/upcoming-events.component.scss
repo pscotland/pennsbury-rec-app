@@ -1,1 +1,34 @@
-/* Styles for the upcoming-events component. */
+@use 'design-tokens' as t;
+
+:host {
+	display: block;
+}
+
+.upcoming-events {
+	padding: t.$space-24 t.$section-gutter;
+	background: t.$surface-bg;
+}
+
+.upcoming-events__container {
+	width: 100%;
+	max-width: t.$content-max-width;
+	margin: 0 auto;
+}
+
+.upcoming-events__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: t.$space-5;
+}
+
+.upcoming-events__state {
+	margin: 0;
+	font-size: t.$text-body-sm;
+	color: t.$text-muted;
+}
+
+@media (max-width: #{t.$bp-tablet}) {
+	.upcoming-events__grid {
+		grid-template-columns: 1fr;
+	}
+}

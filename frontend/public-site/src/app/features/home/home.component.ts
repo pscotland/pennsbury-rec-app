@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroComponent } from './components/hero/hero.component';
 import { UpcomingEventsComponent } from './components/upcoming-events/upcoming-events.component';
 import { VolunteerComponent } from './components/volunteer/volunteer.component';
@@ -16,6 +16,7 @@ import { ContactPreviewComponent } from './components/contact-preview/contact-pr
     ContactPreviewComponent
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {}

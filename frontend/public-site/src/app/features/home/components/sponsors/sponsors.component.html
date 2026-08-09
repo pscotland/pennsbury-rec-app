@@ -1,4 +1,23 @@
-<section>
-  <h2>Sponsors</h2>
-  <p>TODO: Add sponsor list.</p>
+<section class="sponsors-section" aria-labelledby="sponsors-heading">
+  <div class="sponsors-section__container">
+    <header class="sponsors-section__header">
+      <p class="sponsors-section__eyebrow">Proud Community Partners</p>
+      <h2 id="sponsors-heading" class="sponsors-section__heading">Our Sponsors</h2>
+    </header>
+
+    @if (isLoading()) {
+      <p class="sponsors-section__state" role="status">Loading sponsors...</p>
+    } @else if (hasSponsors()) {
+      <div class="sponsors-section__grid">
+        @for (sponsor of sponsors(); track sponsor.id) {
+          <app-sponsor-card [sponsor]="sponsor" />
+        }
+      </div>
+    } @else {
+      <app-empty-state
+        heading="Sponsor listings are coming soon"
+        body="We are currently updating our community partner information."
+      />
+    }
+  </div>
 </section>
