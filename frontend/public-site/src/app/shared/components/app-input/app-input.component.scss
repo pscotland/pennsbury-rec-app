@@ -1,0 +1,65 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.app-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid t.$border-default;
+  border-radius: t.$radius-xl;
+  background: t.$surface-input;
+  font-family: t.$font-family;
+  font-size: 14.5px;
+  color: #1f2937;
+  transition: border-color t.$transition-fast, box-shadow t.$transition-fast;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: t.$text-placeholder;
+  }
+
+  &:focus {
+    border-color: t.$border-focus;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+
+  &:disabled {
+    background: #f3f4f6;
+    color: t.$text-placeholder;
+    cursor: not-allowed;
+  }
+
+  &.ng-invalid.ng-touched {
+    border-color: t.$color-error;
+    background: t.$color-error-bg;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  }
+}
+
+// Icon inset adjustments
+.input-wrap--icon-left .app-input {
+  padding-left: 42px;
+}
+
+.input-wrap--icon-right .app-input {
+  padding-right: 44px;
+}
+
+.input-wrap__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: t.$text-placeholder;
+  font-size: 1.125rem;
+  pointer-events: none;
+
+  &--left { left: 14px; }
+  &--right { right: 14px; }
+}

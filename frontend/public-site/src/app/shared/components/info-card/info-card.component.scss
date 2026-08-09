@@ -1,0 +1,52 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: t.$space-5;
+  background: t.$surface-white;
+  border: 1px solid t.$border-default;
+  border-radius: t.$radius-card;
+  box-shadow: t.$shadow-card;
+}
+
+.info-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: t.$radius-icon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  .pi {
+    font-size: 1.125rem;
+  }
+}
+
+.info-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-1;
+  min-width: 0;
+}
+
+.info-card__label {
+  font-size: t.$text-label;
+  font-weight: t.$weight-semibold;
+  color: t.$text-muted;
+  text-transform: uppercase;
+  letter-spacing: t.$tracking-micro;
+}
+
+.info-card__value {
+  font-size: t.$text-body-sm;
+  font-weight: t.$weight-medium;
+  color: t.$text-primary;
+  word-break: break-word;
+}

@@ -1,0 +1,32 @@
+// Color tokens: semantic palette for all app and component styling.
+$primary: #2563eb;
+$primary-hover: #1d4ed8;
+$secondary: #0ea5e9;
+$accent: #f59e0b;
+
+$success: #16a34a;
+$warning: #f97316;
+$danger: #dc2626;
+
+$surface: #ffffff;
+$background: #f8fafc;
+$border: #e5e7eb;
+
+$text-primary: #111827;
+$text-secondary: #4b5563;
+
+@mixin register-color-tokens() {
+	/* Bridge semantic app tokens to Prime theme tokens with safe fallbacks. */
+	--color-primary: var(--p-primary-color, #{$primary});
+	--color-primary-hover: var(--p-primary-hover-color, #{$primary-hover});
+	--color-secondary: var(--p-highlight-background, #{$secondary});
+	--color-accent: var(--p-highlight-color, #{$accent});
+	--color-success: var(--p-green-500, #{$success});
+	--color-warning: var(--p-orange-500, #{$warning});
+	--color-danger: var(--p-red-500, #{$danger});
+	--color-surface: var(--p-content-background, #{$surface});
+	--color-background: var(--p-surface-50, #{$background});
+	--color-border: var(--p-content-border-color, #{$border});
+	--color-text-primary: var(--p-text-color, #{$text-primary});
+	--color-text-secondary: var(--p-text-muted-color, #{$text-secondary});
+}

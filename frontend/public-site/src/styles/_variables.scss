@@ -1,0 +1,30 @@
+// Shared variables: radius, shadows, transitions, and content widths.
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+
+$shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+$shadow-md: 0 10px 30px rgba(15, 23, 42, 0.12);
+$shadow-lg: 0 18px 48px rgba(15, 23, 42, 0.18);
+
+$transition-fast: 150ms ease-in-out;
+$transition-standard: 220ms ease-in-out;
+
+$container-width: 1200px;
+$container-padding-inline: 24px;
+
+@mixin register-global-tokens() {
+	--radius-sm: #{$radius-sm};
+	--radius-md: #{$radius-md};
+	--radius-lg: #{$radius-lg};
+
+	--shadow-sm: #{$shadow-sm};
+	--shadow-md: #{$shadow-md};
+	--shadow-lg: #{$shadow-lg};
+
+	--transition-fast: #{$transition-fast};
+	--transition-standard: #{$transition-standard};
+
+	--container-width: #{$container-width};
+	--container-padding-inline: #{$container-padding-inline};
+}

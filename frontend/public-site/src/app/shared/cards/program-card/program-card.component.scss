@@ -1,0 +1,89 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.program-card {
+  @include t.card-base();
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+
+.program-card__image {
+  position: relative;
+  height: 210px;
+  background: t.$border-default;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform t.$transition-image;
+
+    .program-card:hover & {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.program-card__status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.program-card__season {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.72);
+  color: t.$text-inverse;
+  backdrop-filter: blur(4px);
+  font-size: t.$text-nano;
+  font-weight: t.$weight-bold;
+  border-radius: t.$radius-pill;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  letter-spacing: t.$tracking-micro;
+}
+
+.program-card__body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.program-card__title {
+  font-size: t.$text-card-title;
+  font-weight: t.$weight-extrabold;
+  color: t.$text-primary;
+  margin: 0 0 t.$space-2;
+  line-height: 1.3;
+  letter-spacing: t.$tracking-card;
+}
+
+.program-card__desc {
+  font-size: t.$text-body-xs;
+  color: t.$text-muted;
+  line-height: 1.65;
+  margin: 0 0 t.$space-4;
+  flex: 1;
+}
+
+.program-card__age {
+  display: inline-block;
+  background: #f0f9ff;
+  color: #0369a1;
+  font-size: t.$text-label;
+  font-weight: t.$weight-semibold;
+  padding: 5px 10px;
+  border-radius: t.$radius-md;
+  margin-bottom: t.$space-4;
+}

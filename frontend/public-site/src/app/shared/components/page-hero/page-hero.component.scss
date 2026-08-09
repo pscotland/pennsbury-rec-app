@@ -1,0 +1,139 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.page-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 64, 175, 0.6) 55%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 0;
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: t.$content-max-width;
+  margin: 0 auto;
+  padding: 0 t.$section-gutter;
+  width: 100%;
+}
+
+.page-hero__breadcrumb {
+  margin-bottom: t.$space-8;
+}
+
+// --- Home variant ---
+.page-hero--home {
+  min-height: 100vh;
+  padding-top: t.$nav-height;
+
+  .page-hero__content {
+    padding-bottom: 100px; // space for stat ticker
+  }
+}
+
+// --- Interior variant ---
+.page-hero--interior {
+  height: 340px;
+  padding-top: t.$nav-height;
+
+  .page-hero__content {
+    padding-top: t.$space-8;
+  }
+}
+
+.page-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-2;
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  padding: 6px 14px;
+  border-radius: t.$radius-pill;
+  font-size: t.$text-label;
+  font-weight: t.$weight-semibold;
+  color: #bfdbfe;
+  margin-bottom: t.$space-5;
+}
+
+.page-hero__badge-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: t.$radius-circle;
+  background: #60a5fa;
+  flex-shrink: 0;
+}
+
+.page-hero__heading {
+  font-size: t.$text-hero;
+  font-weight: t.$weight-black;
+  color: t.$text-inverse;
+  letter-spacing: t.$tracking-hero;
+  line-height: 1.05;
+  margin: 0 0 t.$space-5;
+  max-width: 700px;
+
+  .page-hero--interior & {
+    font-size: t.$text-page-hero;
+    letter-spacing: t.$tracking-heading;
+    line-height: 1.1;
+  }
+}
+
+.page-hero__accent {
+  color: #93c5fd;
+}
+
+.page-hero__subtitle {
+  font-size: t.$text-body-lg;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 0 t.$space-8;
+
+  .page-hero--interior & {
+    font-size: t.$text-body-md;
+    margin: t.$space-3 0 0;
+  }
+}
+
+.page-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.page-hero__ticker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@media (max-width: #{t.$bp-mobile}) {
+  .page-hero--home {
+    min-height: 90vh;
+  }
+
+  .page-hero--interior {
+    height: 280px;
+  }
+
+  .page-hero__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

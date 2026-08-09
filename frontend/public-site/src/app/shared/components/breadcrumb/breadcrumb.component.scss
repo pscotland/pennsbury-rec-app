@@ -1,0 +1,68 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: t.$space-3;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-3;
+}
+
+.breadcrumb__link {
+  font-size: t.$text-body-xs;
+  font-weight: t.$weight-medium;
+  color: t.$text-link;
+  text-decoration: none;
+  transition: color t.$transition-fast;
+
+  &:hover {
+    color: t.$color-primary-dark;
+  }
+
+  &:focus-visible {
+    @include t.focus-ring();
+    border-radius: t.$radius-sm;
+  }
+}
+
+.breadcrumb__sep {
+  font-size: 0.875rem;
+  color: t.$text-placeholder;
+}
+
+.breadcrumb__current {
+  font-size: t.$text-body-xs;
+  font-weight: t.$weight-medium;
+  color: t.$text-muted;
+}
+
+// Inverse variant (on dark hero backgrounds)
+.breadcrumb--inverse {
+  .breadcrumb__link {
+    color: t.$text-link-hero;
+
+    &:hover {
+      color: t.$text-inverse;
+    }
+  }
+
+  .breadcrumb__sep {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .breadcrumb__current {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}

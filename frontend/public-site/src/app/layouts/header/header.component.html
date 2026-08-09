@@ -1,0 +1,114 @@
+<header class="site-header">
+  <a href="#main-content" class="skip-link">
+    Skip to main content
+  </a>
+
+  <div class="header-shell header-shell--desktop">
+    <a
+      [routerLink]="['/']"
+      class="site-logo"
+      aria-label="Parks and Recreation Council home"
+    >
+      <span class="site-logo__badge" aria-hidden="true">
+        <i class="pi pi-users text-sm"></i>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-sm font-extrabold tracking-tight">Riverside</span>
+        <span class="site-logo__subtitle">
+          Recreation Council
+        </span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary navigation" class="primary-nav">
+      <p-menubar [model]="primaryItems" class="primary-menubar">
+        <ng-template #item let-item>
+          <a
+            pRipple
+            [routerLink]="item.routerLink"
+            routerLinkActive="primary-nav__link--active"
+            [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+            class="primary-nav__link"
+          >
+            <span>{{ item.label }}</span>
+          </a>
+        </ng-template>
+      </p-menubar>
+    </nav>
+
+    <div class="desktop-actions">
+      <a [routerLink]="adminLoginCommands" class="admin-link">
+        Admin Login
+      </a>
+
+      <p-button label="Register" [routerLink]="registerCommands" size="small" class="register-button"></p-button>
+    </div>
+  </div>
+
+  <div class="header-shell header-shell--tablet">
+    <a
+      [routerLink]="['/']"
+      class="site-logo"
+      aria-label="Parks and Recreation Council home"
+    >
+      <span class="site-logo__badge" aria-hidden="true">
+        <i class="pi pi-users text-sm"></i>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-sm font-extrabold tracking-tight">Riverside</span>
+        <span class="site-logo__subtitle">
+          Recreation Council
+        </span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary navigation" class="tablet-nav">
+      <ul class="tablet-nav__list">
+        @for (item of primaryItems; track item.label) {
+          <li>
+            <a
+              [routerLink]="item.routerLink"
+              routerLinkActive="tablet-nav__link--active"
+              [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+              class="tablet-nav__link"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="tablet-actions">
+      <a [routerLink]="adminLoginCommands" class="admin-link">
+        Admin Login
+      </a>
+
+      <p-button label="Register" [routerLink]="registerCommands" size="small" class="register-button"></p-button>
+    </div>
+  </div>
+
+  <div class="header-shell header-shell--mobile">
+    <a
+      [routerLink]="['/']"
+      class="site-logo"
+      aria-label="Parks and Recreation Council home"
+    >
+      <span class="site-logo__badge" aria-hidden="true">
+        <i class="pi pi-users text-sm"></i>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-sm font-extrabold tracking-tight">Riverside</span>
+        <span class="site-logo__subtitle">
+          Recreation Council
+        </span>
+      </span>
+    </a>
+
+    <app-mobile-nav
+      [primaryItems]="primaryItems"
+      [adminLoginCommands]="adminLoginCommands"
+      [registerCommands]="registerCommands"
+    />
+  </div>
+</header>

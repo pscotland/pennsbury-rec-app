@@ -1,0 +1,15 @@
+<div class="sponsor-card">
+  @if (sponsor().logoUrl) {
+    <img [src]="sponsor().logoUrl" [alt]="sponsor().name" class="sponsor-card__logo" loading="lazy" />
+  } @else {
+    <div
+      class="sponsor-card__abbr"
+      [style.background]="color() + '22'"
+      [style.color]="color()"
+      aria-hidden="true"
+    >
+      {{ abbr() }}
+    </div>
+  }
+  <p class="sponsor-card__name">{{ sponsor().name }}</p>
+</div>

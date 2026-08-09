@@ -1,0 +1,86 @@
+// Typography tokens: type scale and semantic text roles.
+$font-family-sans: 'Inter', sans-serif;
+
+$hero-size: clamp(2.75rem, 6vw, 4.5rem);
+$hero-line-height: 1.05;
+
+$h1-size: clamp(2rem, 4vw, 3rem);
+$h1-line-height: 1.15;
+
+$h2-size: clamp(1.5rem, 2.8vw, 2.25rem);
+$h2-line-height: 1.2;
+
+$h3-size: clamp(1.25rem, 2.2vw, 1.75rem);
+$h3-line-height: 1.3;
+
+$body-size: 1rem;
+$body-line-height: 1.6;
+
+$small-size: 0.875rem;
+$small-line-height: 1.5;
+
+$caption-size: 0.75rem;
+$caption-line-height: 1.4;
+
+@mixin register-typography-tokens() {
+	--font-family-sans: #{$font-family-sans};
+	--font-hero-size: #{$hero-size};
+	--font-hero-line-height: #{$hero-line-height};
+	--font-h1-size: #{$h1-size};
+	--font-h1-line-height: #{$h1-line-height};
+	--font-h2-size: #{$h2-size};
+	--font-h2-line-height: #{$h2-line-height};
+	--font-h3-size: #{$h3-size};
+	--font-h3-line-height: #{$h3-line-height};
+	--font-body-size: #{$body-size};
+	--font-body-line-height: #{$body-line-height};
+	--font-small-size: #{$small-size};
+	--font-small-line-height: #{$small-line-height};
+	--font-caption-size: #{$caption-size};
+	--font-caption-line-height: #{$caption-line-height};
+}
+
+@mixin apply-typography-foundation() {
+	h1,
+	.text-h1 {
+		font-size: var(--font-h1-size);
+		line-height: var(--font-h1-line-height);
+	}
+
+	h2,
+	.text-h2 {
+		font-size: var(--font-h2-size);
+		line-height: var(--font-h2-line-height);
+	}
+
+	h3,
+	.text-h3 {
+		font-size: var(--font-h3-size);
+		line-height: var(--font-h3-line-height);
+	}
+
+	p,
+	.text-body {
+		font-size: var(--font-body-size);
+		line-height: var(--font-body-line-height);
+	}
+
+	small,
+	.text-small {
+		font-size: var(--font-small-size);
+		line-height: var(--font-small-line-height);
+	}
+
+	.text-hero {
+		font-size: var(--font-hero-size);
+		line-height: var(--font-hero-line-height);
+		letter-spacing: -0.02em;
+	}
+
+	.text-caption {
+		font-size: var(--font-caption-size);
+		line-height: var(--font-caption-line-height);
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
+}

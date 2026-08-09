@@ -1,0 +1,10 @@
+<p-accordion class="faq-accordion" [multiple]="true">
+  @for (item of items(); track item.q; let i = $index) {
+    <p-accordionpanel [value]="i.toString()">
+      <p-accordionheader class="faq-header">{{ item.q }}</p-accordionheader>
+      <p-accordioncontent>
+        <p class="faq-answer">{{ item.a }}</p>
+      </p-accordioncontent>
+    </p-accordionpanel>
+  }
+</p-accordion>

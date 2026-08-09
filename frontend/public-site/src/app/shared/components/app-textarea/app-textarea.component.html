@@ -1,0 +1,11 @@
+<textarea
+  pTextarea
+  [id]="inputId() ?? undefined"
+  [rows]="rows()"
+  [placeholder]="placeholder()"
+  [value]="value()"
+  [disabled]="isDisabled()"
+  class="app-textarea"
+  (input)="handleInput($event)"
+  (blur)="handleBlur()"
+></textarea>

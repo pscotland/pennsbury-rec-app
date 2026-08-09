@@ -1,0 +1,112 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: contents;
+}
+
+.badge {
+  @include t.badge-base();
+}
+
+// --- Status badges ---
+.badge--status {
+  &.badge--open {
+    background: t.$color-success-bg;
+    color: t.$color-success-text;
+
+    .badge__dot { background: t.$color-success; }
+  }
+
+  &.badge--closing-soon {
+    background: t.$color-warning-bg;
+    color: t.$color-warning-text;
+
+    .badge__dot { background: t.$color-warning; }
+  }
+
+  &.badge--full {
+    background: #fee2e2;
+    color: t.$color-error-text;
+
+    .badge__dot { background: t.$color-error; }
+  }
+
+  &.badge--coming-soon {
+    background: t.$color-purple-bg;
+    color: t.$color-purple-text;
+
+    .badge__dot { background: t.$color-purple; }
+  }
+}
+
+.badge__dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: t.$radius-circle;
+  flex-shrink: 0;
+}
+
+// --- Category badges (news articles) ---
+.badge--category {
+  &.badge--announcement {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  &.badge--programs {
+    background: t.$color-success-bg;
+    color: t.$color-success-text;
+  }
+
+  &.badge--community {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  &.badge--sports {
+    background: t.$color-purple-bg;
+    color: #5b21b6;
+  }
+}
+
+// --- Section label pills (eyebrows) ---
+.badge--label {
+  padding: 4px 14px;
+  letter-spacing: t.$tracking-label;
+
+  &.badge--default,
+  &.badge--events,
+  &.badge--get-in-touch,
+  &.badge--registration,
+  &.badge--community {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  &.badge--programs,
+  &.badge--get-involved {
+    background: t.$color-success-bg;
+    color: t.$color-success-text;
+  }
+
+  &.badge--our-history,
+  &.badge--history {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  &.badge--leadership {
+    background: t.$color-purple-bg;
+    color: #5b21b6;
+  }
+}
+
+// --- Event-tag badges (small, no uppercase, alpha bg) ---
+.badge--event-tag {
+  font-size: t.$text-nano;
+  font-weight: t.$weight-bold;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 2px 10px;
+}

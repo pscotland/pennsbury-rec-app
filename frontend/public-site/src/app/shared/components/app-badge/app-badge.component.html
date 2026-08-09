@@ -1,0 +1,9 @@
+<span
+  [class]="'badge badge--' + type() + ' badge--' + slug()"
+  [attr.data-type]="type()"
+>
+  @if (type() === 'status') {
+    <span class="badge__dot" aria-hidden="true"></span>
+  }
+  {{ value() }}
+</span>

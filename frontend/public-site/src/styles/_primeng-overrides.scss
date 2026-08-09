@@ -1,0 +1,63 @@
+// PrimeNG overrides — targeted, component-level adjustments only.
+// Avoid broad resets; prefer specificity over !important.
+
+// --- Focus ring ---
+// Applied unlayered so it supersedes Aura's layered default.
+:root {
+  --p-focus-ring-color: #2563eb;
+  --p-focus-ring-width: 2px;
+  --p-focus-ring-offset: 2px;
+}
+
+// --- Header: strip p-menubar chrome so it behaves as a transparent nav container ---
+.primary-nav .p-menubar {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  gap: 2px;
+  box-shadow: none;
+}
+
+.primary-nav .p-menubar-item-content {
+  padding: 0;
+}
+
+// --- Register CTA button used in header and mobile drawer ---
+.register-button .p-button,
+.drawer-register-button .p-button {
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 11px;
+  background: var(--p-primary-color);
+  border-color: var(--p-primary-color);
+  color: var(--p-primary-contrast-color);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.28);
+  padding: 9px 20px;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.register-button .p-button:not(:disabled):hover,
+.drawer-register-button .p-button:not(:disabled):hover {
+  background: var(--p-primary-hover-color);
+  border-color: var(--p-primary-hover-color);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35);
+}
+
+// Keep the host selectors for backwards-compatibility with older selectors.
+.register-button,
+.drawer-register-button {
+  font-weight: 700;
+  border-radius: 11px;
+  background: var(--p-primary-color);
+  border-color: var(--p-primary-color);
+  color: var(--p-primary-contrast-color);
+}
+
+.register-button:hover,
+.drawer-register-button:hover {
+  background: var(--p-primary-hover-color);
+  border-color: var(--p-primary-hover-color);
+}
+

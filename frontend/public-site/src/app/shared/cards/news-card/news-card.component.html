@@ -1,0 +1,57 @@
+@if (featured()) {
+  <!-- Featured layout -->
+  <article class="news-card news-card--featured">
+    <div class="news-card__featured-image">
+      @if (article().imageUrl) {
+        <img [src]="article().imageUrl" [alt]="article().title" loading="lazy" />
+      }
+    </div>
+    <div class="news-card__featured-body">
+      <div class="news-card__featured-label">
+        <span class="news-card__accent-bar" aria-hidden="true"></span>
+        <span class="news-card__featured-eyebrow">Featured Story</span>
+      </div>
+      <div class="news-card__meta">
+        @if (article().category) {
+          <app-badge type="category" [value]="article().category!" />
+        }
+        <time class="news-card__date" [dateTime]="article().publishedAt">
+          <i class="pi pi-calendar" aria-hidden="true"></i>
+          {{ article().publishedAt | date: 'MMMM d, yyyy' }}
+        </time>
+      </div>
+      <h2 class="news-card__featured-title">{{ article().title }}</h2>
+      <p class="news-card__excerpt">{{ article().summary }}</p>
+      @if (article().bodyPreview) {
+        <p class="news-card__body-preview">{{ article().bodyPreview }}</p>
+      }
+      <app-button variant="primary" [routerLink]="['/news', article().id]">
+        Read Full Story
+      </app-button>
+    </div>
+  </article>
+} @else {
+  <!-- Standard layout -->
+  <article class="news-card">
+    <div class="news-card__image">
+      @if (article().imageUrl) {
+        <img [src]="article().imageUrl" [alt]="article().title" loading="lazy" />
+      }
+      @if (article().category) {
+        <app-badge type="category" [value]="article().category!" class="news-card__cat-badge" />
+      }
+    </div>
+    <div class="news-card__body">
+      <time class="news-card__date" [dateTime]="article().publishedAt">
+        <i class="pi pi-calendar" aria-hidden="true"></i>
+        {{ article().publishedAt | date: 'MMMM d, yyyy' }}
+      </time>
+      <h3 class="news-card__title">{{ article().title }}</h3>
+      <p class="news-card__excerpt">{{ article().summary }}</p>
+      <a [routerLink]="['/news', article().id]" class="news-card__read-more">
+        Read More
+        <i class="pi pi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </article>
+}
