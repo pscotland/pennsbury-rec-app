@@ -18,7 +18,13 @@
 .upcoming-events__grid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: stretch;
 	gap: t.$space-5;
+}
+
+.upcoming-events__grid > app-event-card {
+	height: 100%;
+	min-width: 0;
 }
 
 .upcoming-events__state {
