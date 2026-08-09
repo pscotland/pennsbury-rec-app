@@ -1,0 +1,59 @@
+<p-button
+  icon="pi pi-bars"
+  [text]="true"
+  class="mobile-nav__menu-button"
+  ariaLabel="Open navigation menu"
+  (onClick)="openDrawer()"
+></p-button>
+
+<p-drawer
+  position="right"
+  [visible]="drawerVisible()"
+  [modal]="true"
+  appendTo="body"
+  [dismissible]="true"
+  [showCloseIcon]="true"
+  [blockScroll]="true"
+  header=""
+  styleClass="mobile-nav__drawer"
+  ariaLabel="Site navigation"
+  (visibleChange)="onVisibleChange($event)"
+>
+  <div class="mobile-nav">
+    <nav aria-label="Primary navigation" class="mobile-nav__menu">
+      <ul class="mobile-nav__list">
+        @for (item of primaryItems(); track item.label) {
+          <li class="mobile-nav__item">
+            <a
+              [routerLink]="item.routerLink"
+              routerLinkActive="mobile-nav__link--active"
+              [routerLinkActiveOptions]="{ exact: item['exact'] ?? false }"
+              class="mobile-nav__link"
+              (click)="closeDrawer()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="mobile-nav__actions" aria-label="Account actions">
+      <a
+        [routerLink]="adminLoginCommands()"
+        routerLinkActive="mobile-nav__action-link--active"
+        class="mobile-nav__action-link"
+        (click)="closeDrawer()"
+      >
+        Admin Login
+      </a>
+
+      <p-button
+        label="Register"
+        [routerLink]="registerCommands()"
+        styleClass="drawer-register-button w-full"
+        (onClick)="closeDrawer()"
+      ></p-button>
+    </div>
+  </div>
+</p-drawer>

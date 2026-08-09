@@ -1,0 +1,42 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+:host ::ng-deep .app-select {
+  width: 100%;
+
+  .p-select-label {
+    padding: 12px 14px;
+    font-size: 14.5px;
+    color: #1f2937;
+    background: t.$surface-input;
+  }
+
+  &.p-select {
+    border: 1.5px solid t.$border-default;
+    border-radius: t.$radius-xl;
+    background: t.$surface-input;
+    transition: border-color t.$transition-fast, box-shadow t.$transition-fast;
+
+    &:hover:not(.p-disabled) {
+      border-color: t.$text-muted;
+    }
+
+    &.p-focus {
+      border-color: t.$border-focus;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      outline: none;
+    }
+
+    &.p-disabled {
+      background: #f3f4f6;
+      opacity: 1;
+
+      .p-select-label {
+        color: t.$text-placeholder;
+      }
+    }
+  }
+}

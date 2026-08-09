@@ -1,0 +1,45 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-label {
+  font-size: t.$text-body-xs;
+  font-weight: t.$weight-medium;
+  color: t.$text-secondary;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+:host ::ng-deep .app-checkbox {
+  .p-checkbox-box {
+    width: 20px;
+    height: 20px;
+    border-radius: t.$radius-sm;
+    border: 2px solid #d1d5db;
+    background: t.$surface-white;
+    transition: border-color t.$transition-fast, background t.$transition-fast;
+  }
+
+  &.p-checkbox-checked .p-checkbox-box {
+    background: t.$color-primary;
+    border-color: t.$color-primary;
+  }
+
+  .p-checkbox-icon {
+    color: t.$text-inverse;
+    font-size: 12px;
+    stroke-width: 3;
+  }
+
+  &:not(.p-disabled):hover .p-checkbox-box {
+    border-color: t.$color-primary;
+  }
+}

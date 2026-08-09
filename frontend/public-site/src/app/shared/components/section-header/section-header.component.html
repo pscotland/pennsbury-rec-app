@@ -1,0 +1,29 @@
+<div class="section-header" [class.section-header--center]="alignment() === 'center'">
+
+  <div class="section-header__top" [class.section-header__top--with-cta]="ctaLabel() && alignment() === 'left'">
+    <div class="section-header__text">
+      @if (eyebrow()) {
+        <app-badge type="label" [value]="eyebrow()!" class="section-header__eyebrow" />
+      }
+      <h2 class="section-header__heading">{{ heading() }}</h2>
+      @if (sub()) {
+        <p class="section-header__sub">{{ sub() }}</p>
+      }
+    </div>
+
+    @if (ctaLabel() && ctaRoute() && alignment() === 'left') {
+      <a [routerLink]="ctaRoute()" class="section-header__cta">
+        {{ ctaLabel() }}
+        <i class="pi pi-arrow-right" aria-hidden="true"></i>
+      </a>
+    }
+  </div>
+
+  @if (ctaLabel() && ctaRoute() && alignment() === 'center') {
+    <a [routerLink]="ctaRoute()" class="section-header__cta section-header__cta--center">
+      {{ ctaLabel() }}
+      <i class="pi pi-arrow-right" aria-hidden="true"></i>
+    </a>
+  }
+
+</div>

@@ -1,0 +1,51 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+:host ::ng-deep .faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-3;
+
+  .p-accordionpanel {
+    border: 1px solid t.$border-default;
+    border-radius: t.$radius-card;
+    overflow: hidden;
+    background: t.$surface-white;
+    box-shadow: t.$shadow-card;
+  }
+
+  .p-accordionheader {
+    padding: t.$space-5 t.$space-6;
+    font-size: t.$text-body-sm;
+    font-weight: t.$weight-bold;
+    color: t.$text-primary;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color t.$transition-fast;
+
+    &:hover {
+      color: t.$color-primary;
+    }
+
+    .p-accordionheader-toggle-icon {
+      transition: transform 0.25s ease;
+      color: t.$text-muted;
+    }
+  }
+
+  .p-accordioncontent {
+    padding: 0 t.$space-6 t.$space-5;
+    border-top: 1px solid t.$border-subtle;
+  }
+}
+
+.faq-answer {
+  font-size: t.$text-body-sm;
+  color: t.$text-body;
+  line-height: 1.75;
+  margin: t.$space-4 0 0;
+}

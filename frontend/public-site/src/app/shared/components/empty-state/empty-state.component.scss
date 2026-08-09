@@ -1,0 +1,55 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: t.$space-12 t.$space-6;
+  gap: t.$space-4;
+}
+
+.empty-state__emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.empty-state__heading {
+  font-size: t.$text-card-heading;
+  font-weight: t.$weight-extrabold;
+  color: t.$text-primary;
+  margin: 0;
+}
+
+.empty-state__body {
+  font-size: t.$text-body-sm;
+  color: t.$text-muted;
+  line-height: 1.65;
+  max-width: 400px;
+  margin: 0;
+}
+
+.empty-state__cta {
+  margin-top: t.$space-2;
+  padding: 11px 24px;
+  border-radius: t.$radius-2xl;
+  border: none;
+  background: t.$color-primary;
+  color: t.$text-inverse;
+  font-size: t.$text-body-xs;
+  font-weight: t.$weight-bold;
+  cursor: pointer;
+  transition: background t.$transition-fast;
+
+  &:hover {
+    background: t.$color-primary-dark;
+  }
+
+  &:focus-visible {
+    @include t.focus-ring();
+  }
+}

@@ -1,0 +1,19 @@
+<div class="input-wrap" [class.input-wrap--icon-left]="!!iconLeft()" [class.input-wrap--icon-right]="!!iconRight()">
+  @if (iconLeft()) {
+    <i [class]="'pi ' + iconLeft() + ' input-wrap__icon input-wrap__icon--left'" aria-hidden="true"></i>
+  }
+  <input
+    pInputText
+    [type]="type()"
+    [id]="inputId() ?? undefined"
+    [placeholder]="placeholder()"
+    [value]="value()"
+    [disabled]="isDisabled()"
+    class="app-input"
+    (input)="handleInput($event)"
+    (blur)="handleBlur()"
+  />
+  @if (iconRight()) {
+    <i [class]="'pi ' + iconRight() + ' input-wrap__icon input-wrap__icon--right'" aria-hidden="true"></i>
+  }
+</div>

@@ -1,0 +1,43 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.app-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 14px;
+  border: 1.5px solid t.$border-default;
+  border-radius: t.$radius-xl;
+  background: t.$surface-input;
+  font-family: t.$font-family;
+  font-size: 14.5px;
+  color: #1f2937;
+  resize: vertical;
+  transition: border-color t.$transition-fast, box-shadow t.$transition-fast;
+  outline: none;
+  box-sizing: border-box;
+  line-height: 1.6;
+
+  &::placeholder {
+    color: t.$text-placeholder;
+  }
+
+  &:focus {
+    border-color: t.$border-focus;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+
+  &:disabled {
+    background: #f3f4f6;
+    color: t.$text-placeholder;
+    cursor: not-allowed;
+  }
+
+  &.ng-invalid.ng-touched {
+    border-color: t.$color-error;
+    background: t.$color-error-bg;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  }
+}

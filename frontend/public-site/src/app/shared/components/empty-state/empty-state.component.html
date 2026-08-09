@@ -1,0 +1,12 @@
+<div class="empty-state" role="status">
+  <span class="empty-state__emoji" aria-hidden="true">{{ emoji() }}</span>
+  <h3 class="empty-state__heading">{{ heading() }}</h3>
+  @if (body()) {
+    <p class="empty-state__body">{{ body() }}</p>
+  }
+  @if (ctaLabel() && ctaFn()) {
+    <button type="button" class="empty-state__cta" (click)="ctaFn()!()">
+      {{ ctaLabel() }}
+    </button>
+  }
+</div>

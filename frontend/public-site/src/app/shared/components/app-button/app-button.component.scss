@@ -1,0 +1,143 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: contents;
+}
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: t.$space-3;
+  border: none;
+  cursor: pointer;
+  font-family: t.$font-family;
+  font-weight: t.$weight-bold;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  transition: background t.$transition-fast, transform t.$transition-fast, box-shadow t.$transition-fast, border-color t.$transition-fast;
+  white-space: nowrap;
+
+  &:focus-visible {
+    @include t.focus-ring();
+  }
+
+  // --- Primary ---
+  &.app-btn--primary {
+    padding: 13px 28px;
+    border-radius: t.$radius-2xl;
+    background: t.$color-primary;
+    color: t.$text-inverse;
+    box-shadow: t.$shadow-btn-primary;
+
+    &:hover:not(:disabled) {
+      background: t.$color-primary-dark;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35);
+    }
+
+    &:disabled {
+      background: t.$border-default;
+      color: t.$text-placeholder;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+
+  // --- Primary Hero ---
+  &.app-btn--primary-hero {
+    padding: 15px 32px;
+    border-radius: t.$radius-2xl;
+    background: t.$color-primary;
+    color: t.$text-inverse;
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.45);
+    font-size: 16px;
+
+    &:hover:not(:disabled) {
+      background: t.$color-primary-dark;
+      transform: translateY(-1px);
+    }
+  }
+
+  // --- Secondary (outline on light bg) ---
+  &.app-btn--secondary {
+    padding: 13px 24px;
+    border-radius: t.$radius-2xl;
+    background: transparent;
+    color: t.$text-secondary;
+    border: 2px solid t.$border-default;
+
+    &:hover:not(:disabled) {
+      border-color: t.$color-primary;
+    }
+  }
+
+  // --- Ghost (on dark hero) ---
+  &.app-btn--ghost {
+    padding: 13px 28px;
+    border-radius: t.$radius-2xl;
+    background: rgba(255, 255, 255, 0.12);
+    color: t.$text-inverse;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+
+    &:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.22);
+    }
+  }
+
+  // --- Success ---
+  &.app-btn--success {
+    padding: 13px 28px;
+    border-radius: t.$radius-2xl;
+    background: t.$color-success;
+    color: t.$text-inverse;
+    box-shadow: t.$shadow-btn-success;
+
+    &:hover:not(:disabled) {
+      background: t.$color-success-dark;
+      transform: translateY(-2px);
+    }
+  }
+
+  // --- Outline / waitlist ---
+  &.app-btn--outline {
+    padding: 12px 20px;
+    border-radius: t.$radius-2xl;
+    background: t.$surface-white;
+    color: t.$text-secondary;
+    border: 1.5px solid t.$border-default;
+
+    &:hover:not(:disabled) {
+      border-color: t.$color-primary;
+      color: t.$color-primary;
+    }
+  }
+
+  // --- Link (text style) ---
+  &.app-btn--link {
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    color: t.$color-primary;
+    font-weight: t.$weight-semibold;
+    box-shadow: none;
+
+    &:hover:not(:disabled) {
+      color: t.$color-primary-dark;
+    }
+  }
+
+  // Loading state
+  &[aria-busy='true'] {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+}
+
+// Suppress PrimeNG's own pButton styles so ours take over
+button[pButton],
+a[pButton] {
+  all: unset;
+}
