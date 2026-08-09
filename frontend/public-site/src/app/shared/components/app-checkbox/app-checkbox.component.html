@@ -1,6 +1,6 @@
 <div class="checkbox-wrap">
   <p-checkbox
-    [inputId]="checkboxId() ?? 'checkbox-' + label()"
+    [inputId]="checkboxId() ?? ('checkbox-' + label().trim().toLowerCase().replace(/\s+/g, '-'))"
     [binary]="true"
     [ngModel]="checked()"
     [disabled]="isDisabled()"
