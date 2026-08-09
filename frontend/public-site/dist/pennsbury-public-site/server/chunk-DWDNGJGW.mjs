@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{Bb as o,Oa as c,hb as e,ib as n}from"./chunk-L23OGLJS.mjs";import"./chunk-KYQQYI4M.mjs";var m=class a{static \u0275fac=function(t){return new(t||a)};static \u0275cmp=c({type:a,selectors:[["app-contact"]],decls:5,vars:0,template:function(t,p){t&1&&(e(0,"section")(1,"h1"),o(2,"Contact"),n(),e(3,"p"),o(4,"TODO: Add the contact form and council details."),n()())},encapsulation:2})};export{m as ContactComponent};

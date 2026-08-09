@@ -1,0 +1,1 @@
+import{a as gE,o as nc,r as eI,s as rc}from"./main-KKAEM57I.js";var a=class s{static ɵfac=function(e){return new(e||s)};static ɵcmp=eI({type:s,selectors:[[`app-news`]],decls:5,vars:0,template:function(e,p){e&1&&(nc(0,`section`)(1,`h1`),gE(2,`News`),rc(),nc(3,`p`),gE(4,`TODO: Add the news and announcements feed.`),rc()())},encapsulation:2})};export{a as NewsComponent};
