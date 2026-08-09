@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import{Bb as o,Oa as m,hb as n,ib as t}from"./chunk-L23OGLJS.mjs";import"./chunk-KYQQYI4M.mjs";var a=class s{static \u0275fac=function(e){return new(e||s)};static \u0275cmp=m({type:s,selectors:[["app-news"]],decls:5,vars:0,template:function(e,p){e&1&&(n(0,"section")(1,"h1"),o(2,"News"),t(),n(3,"p"),o(4,"TODO: Add the news and announcements feed."),t()())},encapsulation:2})};export{a as NewsComponent};

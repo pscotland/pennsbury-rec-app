@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import{Bb as p,Oa as t,hb as n,ib as m}from"./chunk-L23OGLJS.mjs";import"./chunk-KYQQYI4M.mjs";var r=class o{static \u0275fac=function(e){return new(e||o)};static \u0275cmp=t({type:o,selectors:[["app-home"]],decls:3,vars:0,template:function(e,s){e&1&&(n(0,"section")(1,"p"),p(2,"TODO: Compose the home page sections here."),m()())},encapsulation:2})};export{r as HomeComponent};
