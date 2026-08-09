@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import{Bb as o,Oa as m,hb as t,ib as n}from"./chunk-L23OGLJS.mjs";import"./chunk-KYQQYI4M.mjs";var a=class r{static \u0275fac=function(e){return new(e||r)};static \u0275cmp=m({type:r,selectors:[["app-programs"]],decls:5,vars:0,template:function(e,s){e&1&&(t(0,"section")(1,"h1"),o(2,"Programs"),n(),t(3,"p"),o(4,"TODO: Add the program listing and filtering experience."),n()())},encapsulation:2})};export{a as ProgramsComponent};

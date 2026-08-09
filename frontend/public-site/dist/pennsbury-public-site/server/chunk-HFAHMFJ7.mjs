@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import{Bb as o,Oa as m,hb as e,ib as n}from"./chunk-L23OGLJS.mjs";import"./chunk-KYQQYI4M.mjs";var i=class a{static \u0275fac=function(t){return new(t||a)};static \u0275cmp=m({type:a,selectors:[["app-about"]],decls:5,vars:0,template:function(t,p){t&1&&(e(0,"section")(1,"h1"),o(2,"About"),n(),e(3,"p"),o(4,"TODO: Add the about page content and mission statement."),n()())},encapsulation:2})};export{i as AboutComponent};

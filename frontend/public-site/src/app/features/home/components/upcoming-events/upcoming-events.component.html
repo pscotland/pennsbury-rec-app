@@ -1,4 +1,25 @@
-<section>
-  <h2>Upcoming Events</h2>
-  <p>TODO: Add upcoming events listing.</p>
+<section id="events" class="upcoming-events">
+  <div class="upcoming-events__container">
+    <app-section-header
+      eyebrow="Upcoming Events"
+      heading="What's Happening"
+      ctaLabel="View All Events"
+      [ctaRoute]="['/contact']"
+    />
+
+    @if (isLoading()) {
+      <p class="upcoming-events__state" role="status">Loading events...</p>
+    } @else if (hasEvents()) {
+      <div class="upcoming-events__grid">
+        @for (event of events(); track event.id) {
+          <app-event-card [event]="event" />
+        }
+      </div>
+    } @else {
+      <app-empty-state
+        heading="No upcoming events right now"
+        body="Please check back soon for upcoming community events and registration opportunities."
+      />
+    }
+  </div>
 </section>

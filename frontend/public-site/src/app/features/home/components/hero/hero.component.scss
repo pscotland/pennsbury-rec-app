@@ -1,1 +1,103 @@
-/* Styles for the hero component. */
+@use 'design-tokens' as t;
+
+:host {
+	display: block;
+}
+
+.home-hero {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	padding-top: t.$nav-height;
+	background-size: cover;
+	background-position: center 30%;
+}
+
+.home-hero__overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(105deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 64, 175, 0.6) 55%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.home-hero__content {
+	position: relative;
+	z-index: 1;
+	max-width: t.$content-max-width;
+	width: 100%;
+	margin: 0 auto;
+	padding: t.$space-20 t.$section-gutter 164px;
+}
+
+.home-hero__badge {
+	display: inline-flex;
+	align-items: center;
+	gap: t.$space-2;
+	margin-bottom: t.$space-6;
+	background: rgba(96, 165, 250, 0.15);
+	border: 1px solid rgba(96, 165, 250, 0.35);
+	border-radius: t.$radius-pill;
+	padding: 6px 14px;
+	font-size: t.$text-label;
+	font-weight: t.$weight-semibold;
+	color: #bfdbfe;
+}
+
+.home-hero__badge-dot {
+	width: 7px;
+	height: 7px;
+	border-radius: t.$radius-circle;
+	background: #60a5fa;
+}
+
+.home-hero__title {
+	margin: 0 0 t.$space-6;
+	max-width: 680px;
+	font-size: t.$text-hero;
+	font-weight: t.$weight-black;
+	line-height: 1.05;
+	letter-spacing: t.$tracking-hero;
+	color: t.$text-inverse;
+}
+
+.home-hero__accent {
+	display: block;
+	color: t.$text-link-hero;
+}
+
+.home-hero__subtitle {
+	margin: 0 0 t.$space-10;
+	max-width: 520px;
+	font-size: t.$text-body-lg;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.home-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+}
+
+.home-hero__ticker {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+@media (max-width: #{t.$bp-mobile}) {
+	.home-hero {
+		min-height: 90vh;
+	}
+
+	.home-hero__content {
+		padding-bottom: 188px;
+	}
+
+	.home-hero__actions {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

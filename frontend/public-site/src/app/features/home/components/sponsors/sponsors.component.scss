@@ -1,1 +1,49 @@
-/* Styles for the sponsors component. */
+@use 'design-tokens' as t;
+
+:host {
+	display: block;
+}
+
+.sponsors-section {
+	padding: 72px t.$section-gutter;
+	background: t.$surface-bg;
+	border-top: 1px solid t.$border-default;
+}
+
+.sponsors-section__container {
+	max-width: t.$content-max-width;
+	margin: 0 auto;
+}
+
+.sponsors-section__header {
+	text-align: center;
+	margin-bottom: t.$space-10;
+}
+
+.sponsors-section__eyebrow {
+	margin: 0 0 t.$space-2;
+	font-size: t.$text-micro;
+	font-weight: t.$weight-bold;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: t.$text-placeholder;
+}
+
+.sponsors-section__heading {
+	margin: 0;
+	font-size: 26px;
+	font-weight: t.$weight-black;
+	color: t.$text-primary;
+}
+
+.sponsors-section__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+	gap: 14px;
+}
+
+.sponsors-section__state {
+	margin: 0;
+	font-size: t.$text-body-sm;
+	color: t.$text-muted;
+}

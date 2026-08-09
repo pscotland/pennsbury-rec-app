@@ -1,4 +1,30 @@
-<section>
-  <h2>Contact</h2>
-  <p>TODO: Add contact preview content.</p>
+<section class="contact-preview">
+  <div class="contact-preview__container">
+    <app-section-header
+      alignment="center"
+      eyebrow="Get in Touch"
+      heading="We're Here to Help"
+      sub="Questions about registration, programs, or volunteering? Reach out anytime."
+    />
+
+    <div class="contact-preview__grid">
+      @for (item of contactItems; track item.label) {
+        <app-info-card
+          [icon]="item.icon"
+          [label]="item.label"
+          [value]="item.value"
+          [iconColor]="item.iconColor"
+        />
+      }
+    </div>
+
+    <app-map-placeholder [address]="mapAddress" height="220px" class="contact-preview__map" />
+
+    <div class="contact-preview__actions">
+      <app-button variant="primary" [routerLink]="contactRoute">
+        Contact Us
+        <i class="pi pi-arrow-right" aria-hidden="true"></i>
+      </app-button>
+    </div>
+  </div>
 </section>

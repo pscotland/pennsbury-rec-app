@@ -1,4 +1,33 @@
-<section>
-  <h2>Hero</h2>
-  <p>TODO: Add hero content and call to action.</p>
+<section class="home-hero" [style.backgroundImage]="'url(' + hero.imageUrl + ')'">
+  <div class="home-hero__overlay" aria-hidden="true"></div>
+
+  <div class="home-hero__content">
+    <div class="home-hero__badge">
+      <span class="home-hero__badge-dot" aria-hidden="true"></span>
+      {{ hero.badge }}
+    </div>
+
+    <h1 class="home-hero__title">
+      {{ hero.heading }}
+      <span class="home-hero__accent">{{ hero.headingAccent }}</span>
+    </h1>
+
+    <p class="home-hero__subtitle">{{ hero.subtitle }}</p>
+
+    <div class="home-hero__actions">
+      <app-button variant="primary-hero" [routerLink]="programsRoute">
+        View Programs
+        <i class="pi pi-arrow-right" aria-hidden="true"></i>
+      </app-button>
+
+      <app-button variant="ghost" [routerLink]="contactRoute" ariaLabel="Learn how to volunteer">
+        <i class="pi pi-users" aria-hidden="true"></i>
+        Volunteer
+      </app-button>
+    </div>
+  </div>
+
+  <div class="home-hero__ticker">
+    <app-stat-ticker [stats]="stats" />
+  </div>
 </section>

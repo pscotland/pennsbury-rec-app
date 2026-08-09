@@ -1,1 +1,125 @@
-/* Styles for the volunteer component. */
+@use 'design-tokens' as t;
+
+:host {
+	display: block;
+}
+
+.volunteer-section {
+	padding: t.$space-24 t.$section-gutter;
+	background: t.$surface-white;
+}
+
+.volunteer-section__container {
+	max-width: t.$content-max-width;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: t.$space-16;
+	align-items: center;
+}
+
+.volunteer-section__image-wrap {
+	position: relative;
+	border-radius: t.$radius-card-xl;
+	overflow: hidden;
+	box-shadow: t.$shadow-image;
+}
+
+.volunteer-section__image {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	display: block;
+}
+
+.volunteer-section__image-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.6) 100%);
+}
+
+.volunteer-section__stat {
+	position: absolute;
+	left: t.$space-6;
+	right: t.$space-6;
+	bottom: t.$space-6;
+	display: flex;
+	align-items: center;
+	gap: t.$space-3;
+	background: rgba(255, 255, 255, 0.95);
+	border-radius: 12px;
+	padding: 14px 18px;
+}
+
+.volunteer-section__stat-icon {
+	@include t.icon-container(40px, t.$radius-icon, t.$color-primary);
+}
+
+.volunteer-section__stat-title {
+	margin: 0;
+	font-size: t.$text-body-sm;
+	font-weight: t.$weight-extrabold;
+	color: t.$text-primary;
+}
+
+.volunteer-section__stat-text {
+	margin: 0;
+	font-size: t.$text-micro;
+	color: t.$text-muted;
+}
+
+.volunteer-section__heading {
+	margin: t.$space-5 0 t.$space-5;
+	font-size: clamp(28px, 4vw, 48px);
+	font-weight: t.$weight-black;
+	color: t.$text-primary;
+	line-height: 1.1;
+	letter-spacing: -0.8px;
+}
+
+.volunteer-section__body {
+	margin: 0 0 t.$space-6;
+	font-size: t.$text-body-md;
+	line-height: 1.75;
+	color: t.$text-muted;
+}
+
+.volunteer-section__list {
+	list-style: none;
+	margin: 0 0 t.$space-8;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: t.$space-3;
+}
+
+.volunteer-section__list-item {
+	display: flex;
+	align-items: center;
+	gap: t.$space-3;
+	font-size: t.$text-body-sm;
+	font-weight: t.$weight-medium;
+	color: t.$text-secondary;
+}
+
+.volunteer-section__check {
+	width: 22px;
+	height: 22px;
+	border-radius: t.$radius-circle;
+	background: t.$color-success-bg;
+	color: t.$color-success;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+
+	.pi {
+		font-size: 0.7rem;
+	}
+}
+
+@media (max-width: #{t.$bp-tablet}) {
+	.volunteer-section__container {
+		grid-template-columns: 1fr;
+	}
+}

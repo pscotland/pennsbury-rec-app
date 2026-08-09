@@ -1,4 +1,52 @@
-<section>
-  <h2>Volunteer</h2>
-  <p>TODO: Add volunteer callout.</p>
+<section class="volunteer-section" aria-labelledby="volunteer-heading">
+  <div class="volunteer-section__container">
+    <div class="volunteer-section__image-wrap">
+      <img
+        [src]="volunteer.imageUrl"
+        [alt]="volunteer.imageAlt"
+        class="volunteer-section__image"
+        loading="lazy"
+      />
+
+      <div class="volunteer-section__image-overlay" aria-hidden="true"></div>
+
+      <div class="volunteer-section__stat">
+        <div class="volunteer-section__stat-icon" aria-hidden="true">
+          <i class="pi pi-heart"></i>
+        </div>
+        <div>
+          <p class="volunteer-section__stat-title">{{ volunteer.statTitle }}</p>
+          <p class="volunteer-section__stat-text">{{ volunteer.statText }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="volunteer-section__content">
+      <app-badge type="label" value="Get Involved" />
+
+      <h2 id="volunteer-heading" class="volunteer-section__heading">
+        {{ volunteer.headingLine1 }}
+        <br />
+        {{ volunteer.headingLine2 }}
+      </h2>
+
+      <p class="volunteer-section__body">{{ volunteer.body }}</p>
+
+      <ul class="volunteer-section__list">
+        @for (item of volunteer.opportunities; track item) {
+          <li class="volunteer-section__list-item">
+            <span class="volunteer-section__check" aria-hidden="true">
+              <i class="pi pi-check"></i>
+            </span>
+            <span>{{ item }}</span>
+          </li>
+        }
+      </ul>
+
+      <app-button variant="success" [routerLink]="contactRoute">
+        Become a Volunteer
+        <i class="pi pi-arrow-right" aria-hidden="true"></i>
+      </app-button>
+    </div>
+  </div>
 </section>
