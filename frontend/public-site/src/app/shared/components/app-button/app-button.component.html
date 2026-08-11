@@ -1,6 +1,12 @@
+<ng-template #projectedContent>
+  @if (loading()) {
+    <i class="pi pi-spin pi-spinner" aria-hidden="true"></i>
+  }
+  <ng-content></ng-content>
+</ng-template>
+
 @if (routerLink()) {
   <a
-    pButton
     [routerLink]="(disabled() || loading()) ? null : routerLink()"
     [class]="hostClass()"
     [attr.aria-label]="ariaLabel()"
@@ -9,14 +15,10 @@
     [attr.tabindex]="(disabled() || loading()) ? -1 : null"
     (click)="(disabled() || loading()) ? null : clicked.emit($event)"
   >
-    @if (loading()) {
-      <i class="pi pi-spin pi-spinner" aria-hidden="true"></i>
-    }
-    <ng-content />
+    <ng-container [ngTemplateOutlet]="projectedContent"></ng-container>
   </a>
 } @else {
   <button
-    pButton
     [type]="type()"
     [class]="hostClass()"
     [disabled]="disabled() || loading()"
@@ -24,9 +26,6 @@
     [attr.aria-busy]="loading() ? 'true' : null"
     (click)="clicked.emit($event)"
   >
-    @if (loading()) {
-      <i class="pi pi-spin pi-spinner" aria-hidden="true"></i>
-    }
-    <ng-content />
+    <ng-container [ngTemplateOutlet]="projectedContent"></ng-container>
   </button>
 }
