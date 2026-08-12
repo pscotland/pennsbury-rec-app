@@ -1,0 +1,28 @@
+<section class="about-history" aria-label="About history">
+  <div class="about-history__container">
+    <app-section-header
+      [eyebrow]="history.eyebrow"
+      [heading]="history.heading"
+      [sub]="history.summary"
+      alignment="center"
+    />
+
+    <ol class="about-history__timeline" aria-label="Riverside Recreation Council timeline">
+      @for (item of timeline; track item.year; let isLast = $last) {
+        <li class="about-history__item">
+          <div class="about-history__rail" aria-hidden="true">
+            <span class="about-history__dot">{{ item.year.slice(2) }}</span>
+            @if (!isLast) {
+              <span class="about-history__line"></span>
+            }
+          </div>
+
+          <div class="about-history__content">
+            <h3 class="about-history__year">{{ item.year }}</h3>
+            <p class="about-history__event">{{ item.event }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="about-mission" aria-label="Our mission">
+  <div class="about-mission__container">
+    <div class="about-mission__content">
+      <app-section-header
+        [eyebrow]="mission.eyebrow"
+        [heading]="missionHeading"
+      ></app-section-header>
+
+      @for (paragraph of mission.paragraphs; track paragraph) {
+        <p class="about-mission__body">{{ paragraph }}</p>
+      }
+    </div>
+
+    <figure class="about-mission__media">
+      <img
+        [src]="mission.imageUrl"
+        [alt]="mission.imageAlt"
+        class="about-mission__image"
+        loading="lazy"
+      />
+    </figure>
+  </div>
+</section>

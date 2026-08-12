@@ -1,0 +1,17 @@
+<section class="about-cta" aria-labelledby="about-cta-heading">
+  <div class="about-cta__container">
+    <h2 id="about-cta-heading" class="about-cta__heading">{{ cta.heading }}</h2>
+    <p class="about-cta__body">{{ cta.body }}</p>
+
+    <div class="about-cta__actions">
+      <app-button variant="primary" [routerLink]="cta.primaryRoute">
+        {{ cta.primaryLabel }}
+        <i class="pi pi-arrow-right" aria-hidden="true"></i>
+      </app-button>
+
+      <app-button variant="secondary" [routerLink]="cta.secondaryRoute">
+        {{ cta.secondaryLabel }}
+      </app-button>
+    </div>
+  </div>
+</section>
