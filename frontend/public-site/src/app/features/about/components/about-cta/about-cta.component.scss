@@ -1,0 +1,39 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.about-cta {
+  padding: t.$space-20 t.$section-gutter;
+  background: t.$surface-white;
+  border-top: 1px solid t.$border-default;
+}
+
+.about-cta__container {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-cta__heading {
+  margin: 0 0 14px;
+  font-size: clamp(28px, 3.2vw, 32px);
+  font-weight: t.$weight-black;
+  color: t.$text-primary;
+  letter-spacing: -0.5px;
+}
+
+.about-cta__body {
+  margin: 0 0 t.$space-8;
+  font-size: t.$text-body-md;
+  color: t.$text-muted;
+  line-height: 1.7;
+}
+
+.about-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}

@@ -48,7 +48,7 @@
   font-weight: t.$weight-bold;
   color: t.$color-primary;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
   transition: gap t.$transition-fast, color t.$transition-fast;
 
   &:hover {
@@ -74,4 +74,10 @@
     display: inline-flex;
     margin-top: t.$space-4;
   }
+}
+
+@media (min-width: #{t.$bp-tablet + 1px}) {
+	.section-header__cta {
+		white-space: nowrap;
+	}
 }

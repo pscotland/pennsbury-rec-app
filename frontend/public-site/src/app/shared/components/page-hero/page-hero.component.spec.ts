@@ -15,7 +15,7 @@ describe('PageHeroComponent', () => {
 
     fixture = TestBed.createComponent(PageHeroComponent);
     component = fixture.componentInstance;
-    fixture.componentRef.setInput('heading', 'Welcome to Riverside Recreation');
+    fixture.componentRef.setInput('heading', 'Welcome to Pennsbury Recreation');
     fixture.detectChanges();
   });
 

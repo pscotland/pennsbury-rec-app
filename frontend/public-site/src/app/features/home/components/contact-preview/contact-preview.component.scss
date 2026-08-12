@@ -17,8 +17,14 @@
 .contact-preview__grid {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
+	align-items: stretch;
 	gap: t.$space-5;
 	margin-bottom: t.$space-10;
+}
+
+.contact-preview__grid > app-info-card {
+	height: 100%;
+	min-width: 0;
 }
 
 .contact-preview__map {

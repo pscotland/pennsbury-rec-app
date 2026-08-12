@@ -1,0 +1,86 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.about-history {
+  padding: t.$space-24 t.$section-gutter;
+  background: t.$surface-bg;
+}
+
+.about-history__container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.about-history__timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-history__item {
+  display: flex;
+  gap: t.$space-5;
+}
+
+.about-history__rail {
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.about-history__dot {
+  width: 40px;
+  height: 40px;
+  border-radius: t.$radius-circle;
+  background: t.$color-primary;
+  color: t.$text-inverse;
+  font-size: t.$text-nano;
+  font-weight: t.$weight-extrabold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-history__line {
+  width: 2px;
+  flex: 1;
+  background: t.$border-primary-light;
+  margin: 4px 0;
+}
+
+.about-history__content {
+  padding: t.$space-2 0 t.$space-8;
+}
+
+.about-history__year {
+  margin: 0 0 t.$space-1;
+  font-size: t.$text-body-sm;
+  font-weight: t.$weight-extrabold;
+  color: t.$color-primary;
+}
+
+.about-history__event {
+  margin: 0;
+  font-size: t.$text-body-sm;
+  color: t.$text-body;
+  line-height: 1.7;
+}
+
+.about-history__item:last-child {
+  .about-history__content {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: #{t.$bp-mobile}) {
+  .about-history__item {
+    gap: t.$space-4;
+  }
+}

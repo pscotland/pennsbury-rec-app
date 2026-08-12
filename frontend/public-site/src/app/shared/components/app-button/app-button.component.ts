@@ -1,6 +1,6 @@
 import { Component, input, output, computed } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
 
 export type ButtonVariant =
   | 'primary'
@@ -14,7 +14,7 @@ export type ButtonVariant =
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [ButtonModule, RouterLink],
+  imports: [RouterLink, NgTemplateOutlet],
   templateUrl: './app-button.component.html',
   styleUrl: './app-button.component.scss'
 })
