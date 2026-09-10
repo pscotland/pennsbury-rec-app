@@ -97,7 +97,7 @@ export const HOME_VOLUNTEER: HomeVolunteerContent = {
 };
 
 export const HOME_SPONSORS: Sponsor[] = [
-  { id: 'pennsbury-bank', name: 'Pennsbury Bank', color: '#2563EB', abbreviation: 'RB' },
+  { id: 'pennsbury-bank', name: 'Pennsbury Bank', color: '#2563EB', abbreviation: 'PB' },
   { id: 'greenfield-hardware', name: 'Greenfield Hardware', color: '#16A34A', abbreviation: 'GH' },
   { id: 'peak-physical-therapy', name: 'Peak Physical Therapy', color: '#F97316', abbreviation: 'PPT' },
   { id: 'oakwood-pediatrics', name: 'Oakwood Pediatrics', color: '#2563EB', abbreviation: 'OP' },
