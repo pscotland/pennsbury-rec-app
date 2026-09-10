@@ -11,7 +11,7 @@ import type {
 
 export const ABOUT_HERO: AboutHeroContent = {
   heading: 'About Us',
-  subtitle: 'Serving Riverside families for over 30 years',
+  subtitle: 'Serving Pennsbury families for over 30 years',
   imageUrl: 'assets/images/hero/home-photo-1632300951015-42d7df909581.jpeg',
   breadcrumbs: [
     { label: 'Home', route: ['/'] },
@@ -22,9 +22,9 @@ export const ABOUT_HERO: AboutHeroContent = {
 export const ABOUT_MISSION: AboutMissionContent = {
   eyebrow: 'Our Mission',
   headingLine1: 'Recreation for',
-  headingLine2: 'Every Riverside Resident',
+  headingLine2: 'Every Pennsbury Resident',
   paragraphs: [
-    'The Riverside Recreation Council is a nonprofit organization dedicated to enriching community life by providing accessible, high-quality recreational programs for children, adults, and seniors.',
+    'The Pennsbury Recreation Council is a nonprofit organization dedicated to enriching community life by providing accessible, high-quality recreational programs for children, adults, and seniors.',
     'We believe that physical activity, creative play, and community connection are essential to a healthy and vibrant city. Our programs are designed to be inclusive, affordable, and welcoming to every family regardless of background or ability.'
   ],
   imageUrl: 'assets/images/hero/volunteer-placeholder.svg',
@@ -35,12 +35,12 @@ export const ABOUT_HISTORY: AboutHistoryContent = {
   eyebrow: 'Our History',
   heading: 'Three Decades of Community',
   summary:
-    'Founded in 1994 by a small group of parents and coaches, Riverside Recreation Council started with a single youth soccer league and 48 registered players. Today we run 18 programs and serve over 2,400 participants each year.'
+    'Founded in 1994 by a small group of parents and coaches, Pennsbury Recreation Council started with a single youth soccer league and 48 registered players. Today we run 18 programs and serve over 2,400 participants each year.'
 };
 
 export const ABOUT_TIMELINE: AboutTimelineItem[] = [
   { year: '1994', event: 'Founded with one soccer league and 48 players.' },
-  { year: '2001', event: 'Opened Riverside Aquatic Center and launched swim lessons.' },
+  { year: '2001', event: 'Opened Pennsbury Aquatic Center and launched swim lessons.' },
   { year: '2008', event: 'Reached 1,000 registered participants for the first time.' },
   { year: '2015', event: 'Launched Summer Adventure Camp with 80 campers in the first season.' },
   { year: '2022', event: 'Secured $800K grant for new Greenfield Sports Complex lighting.' },
