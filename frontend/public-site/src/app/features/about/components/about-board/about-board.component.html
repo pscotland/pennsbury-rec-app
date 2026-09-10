@@ -1,0 +1,29 @@
+<section class="about-board" aria-label="Board of Directors">
+  <div class="about-board__container">
+    <app-section-header
+      eyebrow="Leadership"
+      heading="Board of Directors"
+      sub="Volunteer leaders elected by our community, guiding the Council's mission and vision."
+      alignment="center"
+    />
+
+    <div class="about-board__grid">
+      @for (member of boardMembers(); track member.id) {
+        <article class="board-card">
+          <div
+            class="board-card__avatar"
+            [style.background]="avatarBackground(member)"
+            [style.border-color]="avatarBorderColor(member)"
+            [style.color]="member.color"
+            aria-hidden="true"
+          >
+            {{ member.initials }}
+          </div>
+
+          <h3 class="board-card__name">{{ member.name }}</h3>
+          <p class="board-card__title">{{ member.title }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

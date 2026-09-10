@@ -1,4 +1,4 @@
-# Riverside Recreation Council — Design-to-Development Handoff
+# Pennsbury Recreation Council — Design-to-Development Handoff
 
 **Version:** 1.0 · **Date:** 2026-08-08  
 **Source design:** React prototype (Version 2) — `/workspaces/default/code/src/`  
@@ -375,7 +375,7 @@ Used in Nav (default), Footer (default), Login (enlarged).
 | Icon box shadow | `0 2px 10px rgba(37,99,235,0.30)` | `0 4px 16px rgba(37,99,235,0.30)` |
 | SVG icon size | `20px` | `24px` |
 | Gap (box → text) | `10px` | centered (no wordmark beside) |
-| "Riverside" | `font-size: 15px`, weight `800`, `#111827` | `font-size: 18px`, weight `900`, `#111827` |
+| "Pennsbury" | `font-size: 15px`, weight `800`, `#111827` | `font-size: 18px`, weight `900`, `#111827` |
 | "Recreation Council" | `font-size: 10px`, weight `500`, `#6B7280`, uppercase, `letter-spacing: 0.6px` | `font-size: 13px`, weight `500`, `#6B7280`, as "Admin Portal" |
 
 ---
@@ -927,7 +927,7 @@ Wraps any form control with label, helper, and error message.
 - Form submission: `Enter` in text fields should not submit unintentionally (use `type="button"` for non-submit buttons)
 
 ### ARIA Labels
-- Logo link: `aria-label="Riverside Recreation Council — Home"`
+- Logo link: `aria-label="Pennsbury Recreation Council — Home"`
 - Hamburger: `aria-label="Open navigation"` / `"Close navigation"`, `aria-expanded`
 - Social icon links: `aria-label="{Platform Name}"` (e.g., `"Facebook"`)
 - Status badge dots (decorative 6px circles): `aria-hidden="true"`
@@ -1224,7 +1224,7 @@ body {
 
 ## 18. Angular Development Agent Instructions
 
-You are an Angular 22 coding agent responsible for implementing the shared UI components for the Riverside Recreation Council website. This document is your primary specification. Do not redesign anything — implement the designs exactly as documented here.
+You are an Angular 22 coding agent responsible for implementing the shared UI components for the Pennsbury Recreation Council website. This document is your primary specification. Do not redesign anything — implement the designs exactly as documented here.
 
 ### Before You Begin
 

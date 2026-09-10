@@ -7,7 +7,11 @@
 .event-card {
   display: flex;
   flex-direction: row;
+  align-items: stretch;
   gap: t.$space-5;
+  width: 100%;
+  height: 100%;
+  min-height: 188px;
   padding: t.$space-6;
   background: t.$surface-white;
   border: 1px solid t.$border-default;
@@ -53,6 +57,8 @@
 .event-card__content {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-card__meta {
@@ -74,6 +80,10 @@
 }
 
 .event-card__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
   font-size: t.$text-article-title;
   font-weight: t.$weight-extrabold;
   color: t.$text-primary;
@@ -93,6 +103,10 @@
 }
 
 .event-card__desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   font-size: t.$text-body-xs;
   color: t.$text-muted;
   line-height: 1.6;

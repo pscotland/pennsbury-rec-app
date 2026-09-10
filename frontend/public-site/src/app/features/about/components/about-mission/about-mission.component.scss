@@ -1,0 +1,51 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.about-mission {
+  padding: t.$space-24 t.$section-gutter;
+  background: t.$surface-white;
+}
+
+.about-mission__container {
+  max-width: t.$content-max-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: t.$space-16;
+  align-items: center;
+}
+
+.about-mission__body {
+  margin: 0 0 t.$space-5;
+  font-size: t.$text-body-md;
+  color: t.$text-body;
+  line-height: 1.8;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about-mission__media {
+  margin: 0;
+  border-radius: t.$radius-card-xl;
+  overflow: hidden;
+  box-shadow: t.$shadow-image;
+}
+
+.about-mission__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: #{t.$bp-tablet}) {
+  .about-mission__container {
+    grid-template-columns: 1fr;
+    gap: t.$space-10;
+  }
+}

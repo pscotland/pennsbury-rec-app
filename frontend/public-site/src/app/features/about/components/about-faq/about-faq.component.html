@@ -1,0 +1,11 @@
+<section class="about-faq" aria-label="Frequently asked questions">
+  <div class="about-faq__container">
+    <app-section-header
+      [eyebrow]="faqContent.eyebrow"
+      [heading]="faqContent.heading"
+      alignment="center"
+    />
+
+    <app-faq-accordion [items]="faqItems()" />
+  </div>
+</section>

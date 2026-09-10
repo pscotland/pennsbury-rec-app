@@ -135,9 +135,3 @@
     opacity: 0.75;
   }
 }
-
-// Suppress PrimeNG's own pButton styles so ours take over
-button[pButton],
-a[pButton] {
-  all: unset;
-}

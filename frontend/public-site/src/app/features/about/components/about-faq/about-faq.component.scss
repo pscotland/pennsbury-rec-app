@@ -1,0 +1,15 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.about-faq {
+  padding: t.$space-24 t.$section-gutter;
+  background: t.$surface-bg;
+}
+
+.about-faq__container {
+  max-width: 760px;
+  margin: 0 auto;
+}

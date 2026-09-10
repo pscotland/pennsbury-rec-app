@@ -9,7 +9,7 @@
   <div class="event-card__content">
     <div class="event-card__meta">
       @for (tag of event().tags ?? []; track tag.label) {
-        <app-badge type="event-tag" [value]="tag.label" />
+        <app-badge type="event-tag" [value]="tag.label" [color]="tag.color" />
       }
       @if (event().time) {
         <span class="event-card__time">

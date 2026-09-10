@@ -1,0 +1,62 @@
+@use 'design-tokens' as t;
+
+:host {
+  display: block;
+}
+
+.about-board {
+  padding: t.$space-24 t.$section-gutter;
+  background: t.$surface-white;
+}
+
+.about-board__container {
+  max-width: t.$content-max-width;
+  margin: 0 auto;
+}
+
+.about-board__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: t.$space-5;
+}
+
+.board-card {
+  background: t.$surface-subtle;
+  border: 1px solid t.$border-default;
+  border-radius: t.$radius-card-lg;
+  padding: t.$space-8 t.$space-5;
+  text-align: center;
+  transition: t.$transition-lift;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: t.$shadow-card-hover;
+  }
+}
+
+.board-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: t.$radius-circle;
+  margin: 0 auto t.$space-4;
+  border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: t.$weight-extrabold;
+}
+
+.board-card__name {
+  margin: 0 0 t.$space-1;
+  font-size: 16px;
+  font-weight: t.$weight-extrabold;
+  color: t.$text-primary;
+}
+
+.board-card__title {
+  margin: 0;
+  font-size: t.$text-label;
+  color: t.$text-muted;
+  font-weight: t.$weight-medium;
+}
