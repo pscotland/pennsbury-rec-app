@@ -286,7 +286,7 @@ export const BOARD_MEMBERS = [
   { name: 'Raymond Ortiz', title: 'Vice President', initials: 'RO', color: '#16A34A' },
   { name: 'Keiko Tanaka', title: 'Treasurer', initials: 'KT', color: '#F97316' },
   { name: 'David Chen', title: 'Secretary', initials: 'DC', color: '#7C3AED' },
-  { name: 'Maria Delgado', title: 'Programs Director', initials: 'MD ', color: '#2563EB' },
+  { name: 'Maria Delgado', title: 'Programs Director', initials: 'MD', color: '#2563EB' },
   { name: 'James Okoye', title: 'Facilities Director', initials: 'JO', color: '#16A34A' },
 ]
 
