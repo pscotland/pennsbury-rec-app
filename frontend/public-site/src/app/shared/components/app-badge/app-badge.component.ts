@@ -52,6 +52,10 @@ export class AppBadgeComponent {
     const g = Number.parseInt(expanded.slice(2, 4), 16);
     const b = Number.parseInt(expanded.slice(4, 6), 16);
 
+    if ([r, g, b].some((v) => Number.isNaN(v))) {
+      return hex;
+    }
+
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   }
 }
