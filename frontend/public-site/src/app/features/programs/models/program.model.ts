@@ -20,4 +20,3 @@ export interface Program {
   registrationOpen?: boolean;
   tags?: string[];
 }
-

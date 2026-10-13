@@ -2,8 +2,8 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { ProgramService } from '../../core/services/program.service';
-import { ProgramCardComponent } from '../../shared/cards/program-card/program-card.component';
+import { ProgramService } from './services/program.service';
+import { ProgramCardComponent } from './components/program-card/program-card.component';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { EmptyStateComponent } from '../../shared/components/empty-state/empty-state.component';
 import {

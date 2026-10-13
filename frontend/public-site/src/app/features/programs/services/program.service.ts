@@ -2,7 +2,7 @@ import { Injectable, computed, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Program } from '../models/program.model';
-import { PROGRAMS } from '../models';
+import { PROGRAMS } from '../data/programs.mock';
 
 @Injectable({
   providedIn: 'root'
@@ -33,4 +33,3 @@ export class ProgramService {
       .slice(0, limit);
   }
 }
-

@@ -1,5 +1,5 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
-import { PROGRAMS } from './core/models';
+import { PROGRAMS } from './features/programs/data/programs.mock';
 
 export const serverRoutes: ServerRoute[] = [
   {

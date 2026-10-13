@@ -2,7 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { ProgramService } from '../../../../core/services/program.service';
+import { ProgramService } from '../../services/program.service';
 import { AppBadgeComponent } from '../../../../shared/components/app-badge/app-badge.component';
 
 export interface DetailCardItem {

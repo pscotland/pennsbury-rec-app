@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ProgramCardComponent } from './program-card.component';
-import { Program } from '../../../core/models/program.model';
+import { Program } from '../../models/program.model';
 
 const mockProgram: Program = {
   id: '1',
@@ -41,5 +41,24 @@ describe('ProgramCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render the program name', () => {
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.textContent).toContain('Soccer');
+  });
+
+  it('should render the program description', () => {
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.textContent).toContain('Fun soccer program');
+  });
+
+  it('should render age group badge when provided', () => {
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.textContent).toContain('Youth (5–14)');
+  });
+
+  it('should set the detail route correctly', () => {
+    expect((component as any).detailRoute()).toEqual(['/programs', '1']);
   });
 });
