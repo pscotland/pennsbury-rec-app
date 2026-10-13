@@ -1,4 +1,111 @@
-<section>
-  <h1>Programs</h1>
-  <p>TODO: Add the program listing and filtering experience.</p>
-</section>
+<div class="programs-page">
+  <app-page-hero
+    variant="interior"
+    [imageUrl]="hero.imageUrl"
+    [heading]="hero.heading"
+    [subtitle]="hero.subtitle"
+    [breadcrumbs]="hero.breadcrumbs"
+  ></app-page-hero>
+
+  <!-- Search & Filters Bar -->
+  <div class="programs-filters-bar">
+    <div class="programs-filters-container">
+      <!-- Search Input -->
+      <div class="search-field">
+        <i class="pi pi-search search-field__icon" aria-hidden="true"></i>
+        <input
+          pInputText
+          type="search"
+          id="program-search"
+          [ngModel]="search()"
+          (ngModelChange)="onSearchChange($event)"
+          placeholder="Search programs..."
+          aria-label="Search programs by name, description, or sport"
+          class="search-field__input"
+        />
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-controls">
+        <div class="filters-label">
+          <i class="pi pi-filter" aria-hidden="true"></i>
+          <span>Filters:</span>
+        </div>
+
+        <select
+          [ngModel]="ageFilter()"
+          (ngModelChange)="onAgeChange($event)"
+          aria-label="Filter by age group"
+          class="filter-select"
+        >
+          @for (option of ageOptions; track option) {
+            <option [value]="option">{{ option }}</option>
+          }
+        </select>
+
+        <select
+          [ngModel]="sportFilter()"
+          (ngModelChange)="onSportChange($event)"
+          aria-label="Filter by sport"
+          class="filter-select"
+        >
+          @for (option of sportOptions; track option) {
+            <option [value]="option">{{ option }}</option>
+          }
+        </select>
+
+        <select
+          [ngModel]="seasonFilter()"
+          (ngModelChange)="onSeasonChange($event)"
+          aria-label="Filter by season"
+          class="filter-select"
+        >
+          @for (option of seasonOptions; track option) {
+            <option [value]="option">{{ option }}</option>
+          }
+        </select>
+
+        @if (hasFilters()) {
+          <button
+            type="button"
+            (click)="clearFilters()"
+            class="filter-clear-btn"
+            aria-label="Clear all program filters"
+          >
+            Clear
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Section -->
+  <section class="programs-results-section" aria-label="Available Programs">
+    <div class="programs-results-container">
+      <div class="results-meta">
+        <p class="results-count">
+          Showing <strong>{{ filteredPrograms().length }}</strong> of {{ totalProgramsCount() }} programs
+        </p>
+      </div>
+
+      @if (filteredPrograms().length === 0) {
+        <div class="empty-results-card">
+          <app-empty-state
+            emoji="🔍"
+            heading="No programs found"
+            body="Try adjusting your search or filters."
+            ctaLabel="Reset Filters"
+            [ctaFn]="clearFilters"
+          ></app-empty-state>
+        </div>
+      } @else {
+        <div class="programs-grid">
+          @for (program of filteredPrograms(); track program.id) {
+            <app-program-card [program]="program"></app-program-card>
+          }
+        </div>
+      }
+    </div>
+  </section>
+</div>
+

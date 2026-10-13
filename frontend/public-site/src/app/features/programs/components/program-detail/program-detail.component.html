@@ -1,0 +1,183 @@
+@if (program(); as prog) {
+  <div class="program-detail-page">
+    <!-- Hero Image & Header -->
+    <section class="detail-hero" aria-label="Program overview">
+      <img [src]="prog.img" [alt]="prog.name" class="detail-hero__bg-img" />
+      <div class="detail-hero__overlay" aria-hidden="true"></div>
+
+      <div class="detail-hero__content">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="detail-breadcrumb">
+          <a [routerLink]="['/']" class="detail-breadcrumb__link">Home</a>
+          <i class="pi pi-chevron-right detail-breadcrumb__sep" aria-hidden="true"></i>
+          <a [routerLink]="['/programs']" class="detail-breadcrumb__link">Programs</a>
+          <i class="pi pi-chevron-right detail-breadcrumb__sep" aria-hidden="true"></i>
+          <span class="detail-breadcrumb__current" aria-current="page">{{ prog.name }}</span>
+        </nav>
+
+        <h1 class="detail-hero__title">{{ prog.name }}</h1>
+
+        <!-- Badges Row -->
+        <div class="detail-hero__badges">
+          <app-badge type="status" [value]="prog.status" />
+          <span class="detail-hero__badge">
+            {{ prog.season }}
+          </span>
+          <span class="detail-hero__badge">
+            <i class="pi pi-users text-xs" aria-hidden="true"></i>
+            {{ prog.ageGroup }}
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="detail-main-section">
+      <div class="detail-main-container">
+        <!-- Left Column: Details -->
+        <div class="detail-left-column">
+          <!-- About Card -->
+          <div class="detail-card">
+            <h2 class="detail-card__heading">About This Program</h2>
+            <p class="detail-card__text">{{ prog.longDescription }}</p>
+          </div>
+
+          <!-- 4-Box Details Grid -->
+          <div class="detail-grid">
+            @for (item of detailGridItems(); track item.label) {
+              <div class="detail-grid-item">
+                <div class="detail-grid-item__header">
+                  <div
+                    class="detail-grid-item__icon-wrap"
+                    [style.background]="item.color + '14'"
+                    [style.color]="item.color"
+                  >
+                    <i [class]="item.icon" aria-hidden="true"></i>
+                  </div>
+                  <div class="detail-grid-item__label">{{ item.label }}</div>
+                </div>
+                <div class="detail-grid-item__val">{{ item.val }}</div>
+              </div>
+            }
+          </div>
+
+          <!-- Coach Card -->
+          <div class="detail-coach-card">
+            <div class="detail-coach-card__avatar" aria-hidden="true">
+              {{ coachInitials() }}
+            </div>
+            <div class="detail-coach-card__info">
+              <div class="detail-coach-card__label">Lead Coach</div>
+              <div class="detail-coach-card__name">{{ prog.coach }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Registration Card -->
+        <aside class="detail-sidebar" aria-label="Registration and pricing details">
+          <div class="registration-card">
+            <div class="registration-card__status">
+              <app-badge type="status" [value]="prog.status" />
+            </div>
+
+            <h2 class="registration-card__title">{{ prog.name }}</h2>
+            <div class="registration-card__fee">{{ prog.fee }}</div>
+
+            <!-- Highlights list -->
+            <ul class="registration-card__highlights" role="list">
+              <li class="registration-card__highlight-item">
+                <i class="pi pi-calendar" aria-hidden="true"></i>
+                <span>{{ prog.season }}</span>
+              </li>
+              <li class="registration-card__highlight-item">
+                <i class="pi pi-users" aria-hidden="true"></i>
+                <span>{{ prog.ageGroup }}</span>
+              </li>
+              <li class="registration-card__highlight-item">
+                <i class="pi pi-map-marker" aria-hidden="true"></i>
+                <span>{{ primaryLocation() }}</span>
+              </li>
+            </ul>
+
+            <div class="registration-card__divider" aria-hidden="true"></div>
+
+            <!-- Registration Action Button based on status -->
+            <div class="registration-card__actions">
+              @if (prog.status === 'Full') {
+                <button type="button" disabled class="btn-full">
+                  Program Full
+                </button>
+                <button type="button" [routerLink]="['/contact']" class="btn-waitlist">
+                  Join Waitlist
+                </button>
+              } @else if (prog.status === 'Coming Soon') {
+                <button type="button" [routerLink]="['/contact']" class="btn-notify">
+                  Get Notified
+                </button>
+                <p class="action-subtext">Registration opens soon</p>
+              } @else {
+                <a [routerLink]="['/contact']" class="btn-register">
+                  Register Now
+                </a>
+                @if (prog.status === 'Closing Soon') {
+                  <p class="warning-subtext">⚡ Registration closing soon</p>
+                }
+              }
+            </div>
+
+            <!-- Support / Contact link -->
+            <div class="registration-card__footer">
+              <p class="footer-help-text">Questions about this program?</p>
+              <a [routerLink]="['/contact']" class="footer-contact-link">
+                <i class="pi pi-envelope" aria-hidden="true"></i>
+                <span>Contact Us</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Related Programs Section -->
+    <section class="related-programs-section" aria-label="More programs">
+      <div class="related-programs-container">
+        <div class="related-programs-header">
+          <h2 class="related-programs-heading">More Programs</h2>
+          <a [routerLink]="['/programs']" class="view-all-link">
+            <span>View All</span>
+            <i class="pi pi-arrow-right text-xs" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="related-programs-grid">
+          @for (rel of relatedPrograms(); track rel.id) {
+            <a [routerLink]="['/programs', rel.id]" class="related-program-card">
+              <div class="related-program-card__img-wrap">
+                <img [src]="rel.img" [alt]="rel.name" loading="lazy" />
+              </div>
+              <div class="related-program-card__body">
+                <h3 class="related-program-card__title">{{ rel.name }}</h3>
+                <p class="related-program-card__meta">{{ rel.ageGroup }} · {{ rel.season }}</p>
+              </div>
+            </a>
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+} @else {
+  <!-- Graceful Not Found State -->
+  <div class="program-not-found-section">
+    <div class="not-found-card">
+      <div class="not-found-icon" aria-hidden="true">🔍</div>
+      <h1 class="not-found-title">Program Not Found</h1>
+      <p class="not-found-desc">
+        We couldn't find the program you were looking for. It may have been renamed or removed.
+      </p>
+      <a [routerLink]="['/programs']" class="not-found-btn">
+        <i class="pi pi-arrow-left" aria-hidden="true"></i>
+        <span>Back to Programs</span>
+      </a>
+    </div>
+  </div>
+}

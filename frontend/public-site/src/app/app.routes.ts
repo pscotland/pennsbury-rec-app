@@ -20,6 +20,13 @@ export const routes: Routes = [
         loadComponent: () => import('./features/programs/programs.component').then((m) => m.ProgramsComponent)
       },
       {
+        path: `${PUBLIC_ROUTE_SEGMENTS.programs}/:id`,
+        loadComponent: () =>
+          import('./features/programs/components/program-detail/program-detail.component').then(
+            (m) => m.ProgramDetailComponent
+          )
+      },
+      {
         path: PUBLIC_ROUTE_SEGMENTS.news,
         loadComponent: () => import('./features/news/news.component').then((m) => m.NewsComponent)
       },

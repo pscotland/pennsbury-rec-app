@@ -7,10 +7,20 @@ import { Program } from '../../../core/models/program.model';
 const mockProgram: Program = {
   id: '1',
   name: 'Soccer',
-  description: 'Fun soccer program',
+  img: 'https://images.unsplash.com/photo-1544333323-ec9ed3218dd1',
+  ageGroup: 'Youth (5–14)',
+  sport: 'Soccer',
   season: 'Fall',
-  registrationOpen: true,
-  status: 'Open'
+  status: 'Open',
+  description: 'Fun soccer program',
+  longDescription: 'Extended description of soccer program.',
+  schedule: 'Saturdays 9am',
+  location: 'Main Field',
+  fee: '$85 / season',
+  minAge: 5,
+  maxAge: 14,
+  coach: 'Coach Marcus',
+  registrationOpen: true
 };
 
 describe('ProgramCardComponent', () => {

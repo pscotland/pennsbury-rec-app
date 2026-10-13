@@ -1,7 +1,8 @@
 <article class="program-card">
   <div class="program-card__image">
-    @if (program().imageUrl) {
-      <img [src]="program().imageUrl" [alt]="program().name" loading="lazy" />
+    @let imgSrc = program().img || program().imageUrl;
+    @if (imgSrc) {
+      <img [src]="imgSrc" [alt]="program().name" loading="lazy" />
     }
     <app-badge type="status" [value]="program().status" class="program-card__status" />
     <span class="program-card__season">{{ program().season }}</span>
@@ -11,15 +12,24 @@
     <h3 class="program-card__title">{{ program().name }}</h3>
     <p class="program-card__desc">{{ program().description }}</p>
     @if (program().ageGroup) {
-      <span class="program-card__age">{{ program().ageGroup }}</span>
+      <span class="program-card__age">
+        <i class="pi pi-users text-xs" aria-hidden="true"></i>
+        <span>{{ program().ageGroup }}</span>
+      </span>
     }
-    <app-button
-      variant="primary"
-      [routerLink]="detailRoute()"
-      class="w-full"
-      ariaLabel="Learn more about {{ program().name }}"
-    >
-      Learn More
-    </app-button>
+    <div class="program-card__actions">
+      <app-button
+        variant="primary"
+        [routerLink]="detailRoute()"
+        class="w-full"
+        [ariaLabel]="'Learn more about ' + program().name"
+      >
+        <span class="inline-flex items-center justify-center gap-1.5 w-full">
+          <span>Learn More</span>
+          <i class="pi pi-arrow-right text-xs" aria-hidden="true"></i>
+        </span>
+      </app-button>
+    </div>
   </div>
 </article>
+

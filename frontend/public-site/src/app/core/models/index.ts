@@ -20,24 +20,8 @@ export const IMAGES = {
   sportsComplex: 'https://images.unsplash.com/photo-1758304481804-bc6599801700?w=1200&h=700&fit=crop&auto=format',
 }
 
-// ─── Programs ─────────────────────────────────────────────────────────────────
-export interface Program {
-  id: string
-  name: string
-  img: string
-  ageGroup: string
-  sport: string
-  season: string
-  status: 'Open' | 'Closing Soon' | 'Full' | 'Coming Soon'
-  description: string
-  longDescription: string
-  schedule: string
-  location: string
-  fee: string
-  minAge: number
-  maxAge: number
-  coach: string
-}
+import { Program, ProgramStatus } from './program.model';
+export type { Program, ProgramStatus };
 
 export const PROGRAMS: Program[] = [
   {
