@@ -1,5 +1,4 @@
-import { Injectable, computed, inject, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable, computed, signal } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Program } from '../models/program.model';
 import { PROGRAMS } from '../data/programs.mock';
@@ -8,7 +7,6 @@ import { PROGRAMS } from '../data/programs.mock';
   providedIn: 'root'
 })
 export class ProgramService {
-  private readonly http = inject(HttpClient);
   private readonly programsState = signal<Program[]>(PROGRAMS);
   private readonly loadingState = signal<boolean>(false);
 
