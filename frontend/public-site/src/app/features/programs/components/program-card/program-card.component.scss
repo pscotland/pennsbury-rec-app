@@ -78,7 +78,9 @@
 }
 
 .program-card__age {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: #f0f9ff;
   color: #0369a1;
   font-size: t.$text-label;
@@ -86,4 +88,9 @@
   padding: 5px 10px;
   border-radius: t.$radius-md;
   margin-bottom: t.$space-4;
+  align-self: flex-start;
+}
+
+.program-card__actions {
+  margin-top: auto;
 }

@@ -1,8 +1,8 @@
 import { Component, input, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Program } from '../../../core/models/program.model';
-import { AppBadgeComponent } from '../../components/app-badge/app-badge.component';
-import { AppButtonComponent } from '../../components/app-button/app-button.component';
+import { Program } from '../../models/program.model';
+import { AppBadgeComponent } from '../../../../shared/components/app-badge/app-badge.component';
+import { AppButtonComponent } from '../../../../shared/components/app-button/app-button.component';
 
 @Component({
   selector: 'app-program-card',
