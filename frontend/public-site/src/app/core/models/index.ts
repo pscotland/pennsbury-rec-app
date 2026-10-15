@@ -1,27 +1,6 @@
-// ─── Images ──────────────────────────────────────────────────────────────────
-export const IMAGES = {
-  hero: 'https://images.unsplash.com/photo-1632300951015-42d7df909581?w=1600&h=900&fit=crop&auto=format',
-  heroAerial: 'https://images.unsplash.com/photo-1758304481749-56fe042af8ef?w=1600&h=900&fit=crop&auto=format',
-  volunteer: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=900&h=600&fit=crop&auto=format',
-  volunteerAlt: 'https://images.unsplash.com/photo-1628717341663-0007b0ee2597?w=900&h=600&fit=crop&auto=format',
-  soccer: 'https://images.unsplash.com/photo-1544333323-ec9ed3218dd1?w=700&h=480&fit=crop&auto=format',
-  soccerHero: 'https://images.unsplash.com/photo-1603291697926-7e5822ed1ac5?w=1200&h=600&fit=crop&auto=format',
-  baseball: 'https://images.unsplash.com/photo-1490326149782-dd42fa59bd9f?w=700&h=480&fit=crop&auto=format',
-  basketball: 'https://images.unsplash.com/photo-1597102522249-a45dd33e8855?w=700&h=480&fit=crop&auto=format',
-  swim: 'https://images.unsplash.com/photo-1651614158095-b98b6c1da74b?w=700&h=480&fit=crop&auto=format',
-  summerCamp: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=700&h=480&fit=crop&auto=format',
-  tennis: 'https://images.unsplash.com/photo-1533222481259-ce20eda1e20b?w=700&h=480&fit=crop&auto=format',
-  boardGroup: 'https://images.unsplash.com/photo-1545379537-5d1275c630fe?w=600&h=400&fit=crop&auto=format',
-  newsTurf: 'https://images.unsplash.com/photo-1634241007705-b8bea7240837?w=800&h=500&fit=crop&auto=format',
-  newsCamp: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=800&h=500&fit=crop&auto=format',
-  newsVolunteer: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=500&fit=crop&auto=format',
-  newsSoccer: 'https://images.unsplash.com/photo-1767902012345-bd31f0ba76d7?w=800&h=500&fit=crop&auto=format',
-  newsSwim: 'https://images.unsplash.com/photo-1651614158095-b98b6c1da74b?w=800&h=500&fit=crop&auto=format',
-  sportsComplex: 'https://images.unsplash.com/photo-1758304481804-bc6599801700?w=1200&h=700&fit=crop&auto=format',
-}
+import { IMAGES } from '../constants/images';
 
-export type { Program, ProgramStatus } from '../../features/programs/models/program.model';
-export { PROGRAMS } from '../../features/programs/data/programs.mock';
+export { IMAGES } from '../constants/images';
 
 // ─── Events ───────────────────────────────────────────────────────────────────
 export interface Event {

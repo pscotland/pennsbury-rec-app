@@ -1,4 +1,4 @@
-import { IMAGES } from '../../../core/models';
+import { IMAGES } from '../../../core/constants/images';
 import { Program } from '../models/program.model';
 
 export const PROGRAMS: Program[] = [
